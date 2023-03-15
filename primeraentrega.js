@@ -11,16 +11,16 @@ let nombre=prompt('que nombre tendra el personaje? (minimo 3 caracteres)')
 let fuerza=parseInt(0)
 let carisma=parseInt(0)
 let inteligencia=parseInt(0)
-let vida=100
-let vidaenemigo=100
+let vida=parseInt(100)
+let vidaenemigo=parseInt(100)
 let confirmaPersonaje=false
-let cantidadDeRounds=valorAleatorio(1,6)
-let iniciativaJugador=0
-let iniciativaEnemigo=0
-let golpeTuyo=0
-let golpeEnemigo=0
-let dañoTotalTuyo=0
-let dañoTotalEnemigo=0
+let cantidadDeRounds=parseInt(valorAleatorio(1,6))
+let iniciativaJugador=parseInt(0)
+let iniciativaEnemigo=parseInt(0)
+let golpeTuyo=parseInt(0)
+let golpeEnemigo=parseInt(0)
+let dañoTotalTuyo=parseInt(0)
+let dañoTotalEnemigo=parseInt(0)
 
 
 
