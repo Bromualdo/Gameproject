@@ -7,63 +7,63 @@ max = Math.floor(max)
  
 return Math.floor(Math.random() * (max - min + 1) + min)
 }
-let Nombre=prompt('que nombre tendra el personaje? (minimo 3 caracteres)')
-let Fuerza=parseInt(0)
-let Carisma=parseInt(0)
-let Inteligencia=parseInt(0)
-let Vida=100
-let Vidaenemigo=100
-let ConfirmaPersonaje=false
+let nombre=prompt('que nombre tendra el personaje? (minimo 3 caracteres)')
+let fuerza=parseInt(0)
+let carisma=parseInt(0)
+let inteligencia=parseInt(0)
+let vida=100
+let vidaenemigo=100
+let confirmaPersonaje=false
 let cantidadDeRounds=valorAleatorio(1,6)
-let IniciativaJugador=0
-let IniciativaEnemigo=0
+let iniciativaJugador=0
+let iniciativaEnemigo=0
 let golpeTuyo=0
 let golpeEnemigo=0
-let DañoTotalTuyo=0
-let DañoTotalEnemigo=0
+let dañoTotalTuyo=0
+let dañoTotalEnemigo=0
 
 
 
 const Hit = () =>{
-    let Acerto =false
+    let acerto =false
     
     if (valorAleatorio(0,10) >5){
         
-        return Acerto=true
+        return acerto=true
     }
     else{
-        return Acerto=false
+        return acerto=false
     }
     
     
 }
   
-if ((Nombre.length >= 3) &&(Nombre.length <=12 ) ) {
+if ((nombre.length >= 3) &&(nombre.length <=12 ) ) {
     
     do {
-    let Clase=prompt('que clase vas a elegir?? (Bardo,Mago,Guerrero)') // <-- que clase vas a elegir?
+    let clase=prompt('que clase vas a elegir?? (Bardo,Mago,Guerrero)') // <-- que clase vas a elegir?
 
     
 
  
     // -- asignacion de estadisticas -- //
-    switch (Clase) {   
+    switch (clase) {   
         case 'Bardo':
-            Fuerza=valorAleatorio(1,5)
-            Carisma=valorAleatorio(5,10)
-            Inteligencia=valorAleatorio(1,8)
+            fuerza=valorAleatorio(1,5)
+            carisma=valorAleatorio(5,10)
+            inteligencia=valorAleatorio(1,8)
             
             break 
         case 'Guerrero':
-            Fuerza=valorAleatorio(5,10)
-            Carisma=valorAleatorio(1,8)
-            Inteligencia=valorAleatorio(1,5)
+            fuerza=valorAleatorio(5,10)
+            carisma=valorAleatorio(1,8)
+            inteligencia=valorAleatorio(1,5)
             
             break
         case 'Mago':
-            Fuerza=valorAleatorio(1,5)
-            Carisma=valorAleatorio(1,8)
-            Inteligencia=valorAleatorio(5,10)      
+            fuerza=valorAleatorio(1,5)
+            carisma=valorAleatorio(1,8)
+            inteligencia=valorAleatorio(5,10)      
             
             break
         default:
@@ -72,8 +72,8 @@ if ((Nombre.length >= 3) &&(Nombre.length <=12 ) ) {
     }
 
     
-    ConfirmaPersonaje= confirm('Tu nombre es '+Nombre+' y la clase elegida es '+Clase+' y los stats son:'+'\nFuerza: '+Fuerza+'\nCarisma: '+Carisma+'\nInteligencia: '+Inteligencia+'\nEstas de acuerdo o volvemos a empezar?')
-    } while (ConfirmaPersonaje==false)
+    confirmaPersonaje= confirm('Tu nombre es '+nombre+' y la clase elegida es '+Clase+' y los stats son:'+'\nFuerza: '+Fuerza+'\nCarisma: '+Carisma+'\nInteligencia: '+Inteligencia+'\nEstas de acuerdo o volvemos a empezar?')
+    } while (confirmaPersonaje==false)
 }
 else{
 alert('hubo un error ingresando el nombre , volve a empezar')
@@ -83,18 +83,18 @@ alert('te encuentras con un enemigo que esta dispuesto a pelear! la pelea durara
 
 
 for (let i=1; i<=cantidadDeRounds; i++ ){
-    IniciativaJugador=valorAleatorio(0,10)
-    IniciativaEnemigo=valorAleatorio(0,10)
+    // iniciativaJugador=valorAleatorio(0,10)
+    // iniciativaEnemigo=valorAleatorio(0,10)
    
     if (Hit()===false) {
         golpeTuyo=valorAleatorio(1,15)
         alert('Aciertas!\nTu daño es de: '+golpeTuyo)
-        Vidaenemigo-=golpeTuyo
+        vidaenemigo-=golpeTuyo
     }
     else {
         golpeEnemigo=valorAleatorio(1,15)
-        Vida-=golpeEnemigo
-        alert('Te golpean!!!\nRecibes la siguiente cantidad  de daño:  '+golpeEnemigo+' tu vida ahora es de: '+Vida)
+        vida-=golpeEnemigo
+        alert('Te golpean!!!\nRecibes la siguiente cantidad  de daño:  '+golpeEnemigo+' tu vida ahora es de: '+vida)
         }
     }
     
