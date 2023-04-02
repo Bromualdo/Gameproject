@@ -1,4 +1,4 @@
-const Clases=[]
+
 class Mago{
     constructor(nombre,fuerza,inteligencia,carisma,destreza,constitucion){
     this.nombre=nombre
@@ -7,7 +7,7 @@ class Mago{
     this.carisma=parseInt(carisma)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-       
+    this.vida=parseInt(40)
     let habilidades =[ {
         Nombre:"Misil Magico",
         Danio:10}
@@ -16,8 +16,8 @@ class Mago{
     {Nombre:"Saeta de hielo"
     ,Danio:15}]
 
-    this.vida=function(){
-        let vidatotal=40*(constitucion/5)
+    this.vidatotal=function(){
+        let vidatotal=parseInt(this.vida*(constitucion/5))
         return vidatotal
     } 
 
@@ -49,7 +49,7 @@ class Guerrero{
     this.carisma=parseInt(carisma)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-
+    this.vida=parseInt(60)
     let habilidades =[ {
         Nombre:"Golpe Brutal",
         Danio:20}
@@ -58,8 +58,8 @@ class Guerrero{
     {Nombre:"Cien Filos"
     ,Danio:15}]
     
-    this.vida=function(){
-        let vidatotal=60*(constitucion/5)
+    this.vidatotal=function(){
+        let vidatotal=this.vida*(constitucion/5)
         return vidatotal
     } 
 
@@ -89,7 +89,7 @@ class Bardo{
     this.carisma=parseInt(carisma)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    
+    this.vida=parseInt(50) 
     let habilidades =[ {
         Nombre:"La llamada del viajero",
         Danio:20}
@@ -98,8 +98,8 @@ class Bardo{
     {Nombre:"Instrumento desafinado"
     ,Danio:10}]
 
-    this.vida=function(){
-        let vidatotal=50*(constitucion/5)
+    this.vidatotal=function(){
+        let vidatotal=this.vida*(constitucion/5)
         return vidatotal
     } 
 
@@ -266,15 +266,15 @@ const GeneradorEnemigo = () =>{
     return enemigos[valorAleatorio(0,2)]
 }
 
-enemigo=GeneradorEnemigo()
-const clase=new Guerrero("adrian",valorAleatorio(5,10),valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
+
+
 
 
 const Hit = (numero1,numero2) =>{
     let acerto =false
     let variable=valorAleatorio(0,18)
     resultado=variable+numero1-numero2 
-    if (resultado >9){
+    if (resultado >7){
         
         return acerto=true 
     }
@@ -287,7 +287,7 @@ const Hit = (numero1,numero2) =>{
 }
 
 const Combate =(var1,var2) =>{
-    vidaPlayer=var1.vida()
+    vidaPlayer=var1.vidatotal()
     vidaEnem=var2.vida()
     console.log(vidaPlayer,vidaEnem,enemigo.nombre)
     i=1
@@ -297,9 +297,9 @@ const Combate =(var1,var2) =>{
         variableUsada=valorAleatorio(0,2)
         usoHabilidad=var1.habilidadUsada(variableUsada)
         habilidadDmg=var1.danioHabilidad(variableUsada)
-                variableUsadaEnem=valorAleatorio(0,1)
+        variableUsadaEnem=valorAleatorio(0,1)
         usoHabilidadEnem=var2.habilidadUsada(variableUsadaEnem)
-        habilidadDmgEnem=var2.danioHabilidad(variableUsadaEnem)*3
+        habilidadDmgEnem=var2.danioHabilidad(variableUsadaEnem)
         
           
             alert("Tu Turno")
@@ -334,11 +334,11 @@ if (vidaEnem <=0){
     return vidaPlayer   
 }   else{
     alert("Las fuerzas del mal te han superado ! intentalo otra vez!")
-    
+        return
     }
 }
 
     
 
-Combate(clase,enemigo)
-alert(vidaPlayer)
+
+

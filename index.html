@@ -4,15 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primer Proyecto</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<header class="header">
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a  href="index.html">Acerca...</a></li>
+        </ul>
+    </nav>  
+</header>
+<!-- <audio controls autoplay preload="auto">
+    <source src="tension.wav" type="audio/wav">
+    
+    </audio> -->
+<div id="select-screen">
 
-<!-- <script>
-    // aca puedo escribir código Javascript
-</script> -->
+<div>
+<h2 id="welcome">Bienvenido! elige tu clase</h2>
+</div>
+<ul class="selector">
+<li id="smago">Mago</li>
+<li id="sguerrero" >Guerrero</li>
+<li id="sbardo">Bardo</li>
+</ul>
 
+<div id="classDesc"></div>
+</div>
+
+
+
+<button class="gameFlow">Confirmar</button>
 <script src="Personaje&enemigos.js"></script>
-<script src="Primeraentrega.js"></script>
+<script src="Eventos.js"></script>
+<script src="Click&See.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetAlert.js"></script>
+
 </body>
 </html>

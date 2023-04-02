@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body {
+background-image: url(forest.jpg);
+background-size:cover;
+background-repeat: no-repeat;
+margin: 0;
+padding: 0;
+position: fixed;
+
+
+}
+
+.header {      
+    height:10% ;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+    width:100%;
+   position: fixed;
+   padding: 5px 10%;
+    align-items: center;
+}
+
+
+#welcome {
+    align-items: center;
+    width: 5% 5%;
+    margin-top: 12%;
+    
+    margin-left: 600px;
+    
+    border: none;
+    display: flex; 
+    position: relative;
+background-color: white;}
+
+
+
+.selector{
+    list-style: none;
+    width: 100%;
+    margin-left: 400px;
+    display: flex;
+    height: 400px;
+    padding-top: 5%;
+    margin-bottom: 50 00px;
+    
+}
+
+.selector li {
+    display: inline-block;
+    width: 100%;
+    margin-right: 5%;
+    
+
+}
+
+#smago{
+    
+    background-image: url(/Gameproject/wizz.jpg);
+    background-size: cover;
+    border:  5px solid white;
+    
+}
+#smago:hover{  
+    border:  5px solid blue;
+}
+
+#sguerrero{
+    background-color: green;
+    background-image: url(/Gameproject/guerrero.jpg);
+    background-size: cover;
+    border:  5px solid white;
+}
+
+#sguerrero:hover{  
+    border:  5px solid blue;
+}
+
+#sbardo{
+    background-image: url(/Gameproject/bardo.jpg);
+    background-size: cover;
+    border:  5px solid white;
+}
+
+#sbardo:hover{  
+    border:  5px solid blue;
+}
+
+#classDesc{
+margin-left: 80%;
+margin-top: 3%;
+width: 300px;
+align-items: center;
+background-color: white;
+}
+
+.gameFlow{
+    margin-left: 93%;
+    margin-top: 5%;
+    
+}
+
+#beggining{
+    
+    margin-left: 100%;
+    margin-top: 20%;
+    width: 600px;
+    height: 500px;
+    background-color: white;
+}
