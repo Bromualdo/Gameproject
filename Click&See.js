@@ -1,5 +1,5 @@
 // D&D , simulador de creacion de personaje //
-
+let clase=''
 let confirmaPersonaje=false
 let iniciativaJugador=0
 let iniciativaEnemigo=0
@@ -64,10 +64,12 @@ finSeleccion.addEventListener('click',()=>{
     
     switch (contador) {
         case 0:
-            let confirma=confirm(`${clase.nombre} quieres quedarte con estos valores?`)
-            if (confirma){
-            Inicio()}
-            contador++
+            if (clase!=''){
+                let confirma=confirm(`${clase.nombre} quieres quedarte con estos valores?`)
+                if (confirma){
+                Inicio()}
+                contador++
+                } else{alert('por favor selecciona un retrato')}
             break;
         case 1:
             Iniciox2()
