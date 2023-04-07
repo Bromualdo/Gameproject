@@ -9,7 +9,7 @@ const Inicio = () =>{
     document.querySelector('.selector').remove()
     document.getElementById('classDesc').remove()
     document.getElementById('welcome').remove()
-    
+    document.getElementById('habilidades').remove()
     
 
     document.getElementById('select-screen').innerHTML=`<p id='beggining'>Al entrar en el bullicioso pueblo de Millfield,un hombre con aspecto desesperado se acerca a ti. 
@@ -17,10 +17,11 @@ const Inicio = () =>{
     La gente ha estado desapareciendo de sus hogares en medio de la noche sin dejar rastro, y las autoridades locales están desconcertadas.
     Cedric te suplica que lo ayudes a resolver el misterio y a encontrar a los habitantes desaparecidos. Ofrece una modesta cantidad de oro como recompensa por tu
      ayuda, pero también advierte que la situación es peligrosa y que debes tener cuidado.Aceptas ayudar y Cedric te entrega una lista de las personas desaparecidas 
-     junto con un mapa de la zona circundante. También te aconseja que hables con los lugareños y recojas cualquier información que puedas sobre las desapariciones.Con un sentido de propósito, te dispones a investigar el misterio,listo para enfrentar cualquier peligro que se interponga en tu camino.`
+     junto con un mapa de la zona circundante. También te aconseja que hables con los lugareños y recojas cualquier información que puedas sobre las desapariciones.Con un sentido de propósito, te dispones a investigar el misterio,listo para enfrentar cualquier peligro que se interponga en tu camino.</p>`
 }
 
 const Iniciox2 = () =>{
+    console.log("antes ",clase.vida)
     enemigo=GeneradorEnemigo()  
     Combate(clase,enemigo)
     
@@ -31,5 +32,15 @@ Decides dirigirte al bosque para investigar más a fondo. Al entrar en el bosque
 Al acercarte, te das cuenta de que hay una extraña energía que emana de la cabaña.
 Con cautela, te acercas a la puerta y la abres. Dentro, encuentras a un anciano sentado frente a un libro enorme.
 Te presenta como un mago y te explica que ha estado investigando un antiguo hechizo que ha sido despertado en el bosque.</p>`
+    console.log(clase.vida)
+}
+
+const Acto1 = () =>{
+    if (eleccion == 'mago')
+    {alert('como mago la sobas')
     
+}   else if (eleccion =='guerrero') {
+    alert('como guerrero la sobas')
+}   else
+    {alert('como bardo la sobas')}
 }

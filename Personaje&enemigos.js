@@ -7,37 +7,35 @@ class Mago{
     this.carisma=parseInt(carisma)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(40)
-    let habilidades =[ {
-        Nombre:"Misil Magico",
-        Danio:10}
-    ,{Nombre:"Bola de Fuego",
-    Danio:20},
-    {Nombre:"Saeta de hielo"
-    ,Danio:15}]
+    this.vida=parseInt(40*(constitucion/5))
+    this.habilidades =[ {
+        Nombre:'Misil Magico',
+        Danio:10,
+        Desc:'un misil magico'}
+    ,{Nombre:'Bola de Fuego',
+    Danio:20,
+    Desc:'una bola de fiaaaa'},
+    {Nombre:'Saeta de hielo',
+    Danio:15,
+    Desc:'Una saeta de hielo'}]
 
-    this.vidatotal=function(){
-        let vidatotal=parseInt(this.vida*(constitucion/5))
-        return vidatotal
-    } 
-
+     
     this.danioHabilidad= function(number){
         
-        let daniototal=habilidades[number].Danio*inteligencia/5
+        let daniototal=this.habilidades[number].Danio*inteligencia/5
         return daniototal
     }
     this.habilidadUsada = function(number) {
-        return habilidades[number].Nombre
+        return this.habilidades[number].Nombre
     }
     this.aprenderHabilidad= function(ob){
-        return habilidades.push(ob)
+        return this.habilidades.push(ob)
     }
-    this.showhabilidades=function(){
-        return habilidades
-    }
+   
 }
 
 }
+
 
 
 
@@ -49,8 +47,8 @@ class Guerrero{
     this.carisma=parseInt(carisma)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(60)
-    let habilidades =[ {
+    this.vida=parseInt(60*(constitucion/5))
+    this.habilidades =[ {
         Nombre:"Golpe Brutal",
         Danio:20}
     ,{Nombre:"Golpe Desafiante",
@@ -58,21 +56,17 @@ class Guerrero{
     {Nombre:"Cien Filos"
     ,Danio:15}]
     
-    this.vidatotal=function(){
-        let vidatotal=this.vida*(constitucion/5)
-        return vidatotal
-    } 
 
     this.danioHabilidad= function(number){
         
-        let daniototal=habilidades[number].Danio*fuerza/5
+        let daniototal=this.habilidades[number].Danio*fuerza/5
         return daniototal
     }
     this.habilidadUsada = function(number) {
-        return habilidades[number].Nombre
+        return this.habilidades[number].Nombre
     }
     this.aprenderHabilidad= function(ob){
-        return habilidades.push(ob)
+        return this.habilidades.push(ob)
     }
     this.showhabilidades=function(){
         return habilidades
@@ -89,8 +83,8 @@ class Bardo{
     this.carisma=parseInt(carisma)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(50) 
-    let habilidades =[ {
+    this.vida=parseInt(50*(constitucion/5)) 
+    this.habilidades =[ {
         Nombre:"La llamada del viajero",
         Danio:20}
     ,{Nombre:"Notas Punzantes",
@@ -98,21 +92,18 @@ class Bardo{
     {Nombre:"Instrumento desafinado"
     ,Danio:10}]
 
-    this.vidatotal=function(){
-        let vidatotal=this.vida*(constitucion/5)
-        return vidatotal
-    } 
+ 
 
     this.danioHabilidad= function(number){
         
-        let daniototal=habilidades[number].Danio*carisma/5
+        let daniototal=this.habilidades[number].Danio*carisma/5
         return daniototal
     }
     this.habilidadUsada = function(number) {
-        return habilidades[number].Nombre
+        return this.habilidades[number].Nombre
     }
     this.aprenderHabilidad= function(ob){
-        return habilidades.push(ob)
+        return this.habilidades.push(ob)
     }
     this.showhabilidades=function(){
         return habilidades
@@ -144,6 +135,7 @@ class Bardo{
 // Clases.push(GuerreroVar)
 
 // console.log(Clases[0].habilidadUsada(1))
+
 
 
 class Esqueleto{
@@ -287,7 +279,7 @@ const Hit = (numero1,numero2) =>{
 }
 
 const Combate =(var1,var2) =>{
-    vidaPlayer=var1.vidatotal()
+    vidaPlayer=var1.vida
     vidaEnem=var2.vida()
     console.log(vidaPlayer,vidaEnem,enemigo.nombre)
     i=1
@@ -331,14 +323,15 @@ const Combate =(var1,var2) =>{
     }
 if (vidaEnem <=0){
     alert("Derrotaste a tu enemigo!, la aventura continua")
-    return vidaPlayer   
+    var1.vida=vidaPlayer 
 }   else{
     alert("Las fuerzas del mal te han superado ! intentalo otra vez!")
         return
     }
 }
 
-    
+
+
 
 
 
