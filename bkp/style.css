@@ -12,17 +12,20 @@ margin: 0;
 padding: 0;
 position: absolute;
 }
-#sign{   
-    position: fixed;
+#sign{
+    background-image: url(/Gameproject/images/wooden_sign.png);
+    position: absolute;
     left: 0%;
     width: 200px;
     
-    
+    background-size: 100%;
 }
 
 .header {    
-    display: inline-block;    
-    /* background-image: url(/Gameproject/images/wooden_sign.png); */    
+    display: inline-block; 
+   
+    /* background-image: url(/Gameproject/images/wooden_sign.png); */
+    
    
     height:8% ;
     display:flex;
@@ -33,39 +36,26 @@ position: absolute;
     
 }
 
-#inicio{
-    position: fixed;
-    font-family: 'Literata', serif;
-    font-size: 45px;
-    left: 2.5%;
-    top: 2.5%;
-    text-decoration:none;
-}
-#logo{
-    position: fixed;
-    left:90%;
-    top: 0.2%;
-    width: 100px;
-    height:100px;    
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
 }
 
-#logo{
-    position: absolute;
-    left:90%;
-    top: 0.2%;
-    width: 100px;
-    height:100px;
-}
-#inicio a:link, a:visited {
-    color:white;
-    text-decoration:none;
-    cursor: auto;
-}
 
-#inicio a:link:active, a:visited:active {
-    color: white;
-    text-decoration:none;
+.nav-links li:first-child {
+    margin-left: 0px;
   }
+
+.nav-links li:last-child{
+   position: relative;
+   
+}
+#logo{
+
+    width: 90px;
+    height: 90px;
+}
 
 #welcome {
 
@@ -155,19 +145,10 @@ background-color: white;
 .gameFlow{
     margin-left: 93%;
     margin-top: 5%;
-    position: absolute;
-    color: white;
     
 }
 
-.gameFlowbtn{
 
-width: 200px;
-position: absolute;
-left: 87%;
-top:104.5%;
-
-}
 
 #beggining{
     background-image: url(images/papiro.jpg);

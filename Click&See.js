@@ -10,17 +10,30 @@ let dañoTotalEnemigo=0
 let eleccion=''
 let contador=0
 let comprobador= 0
-const generarNombre=()=>{    
 
-    
- 
+const logo=document.getElementById('logo')
+logo.addEventListener('mouseover',()=>{
+    logo.style.cursor='pointer'
+})
+logo.addEventListener('click',()=>{
+    alert('me clickeaste wachin')
+
+})
+
+const generarNombre=()=>{   
     nombre=prompt('Ingresa el nombre del aventurero')
 
         while (nombre.length  <4 || !isNaN(nombre))
         {   nombre=prompt('El nombre es muy corto o contiene numeros!! intenta uno mas largo y sin numeros')    }
         return nombre
     }
-    
+
+const radios = document.getElementsByName('genre')
+for (let i=0; i < radios.length;i++)
+{
+    if (radios[i]==1 && radios[i].checked)
+        alert("cheque checka")
+}
 
 const GenerarClassdesc=()=>{
     document.getElementById("classDesc").innerText=`Tu nombre es ${clase.nombre} y la clase elegida es ${eleccion} ,
@@ -37,21 +50,18 @@ const mostrarHabilidades=()=>{
     }
     const elemento =document.createElement('div')
     elemento.id='habilidades'
+    elemento.innerHTML=`<h2>Habilidades: </h2>`
     document.body.appendChild(elemento)
     clase.habilidades.forEach(habilidad => {      
         const cantidad =document.createElement('div')        
-        cantidad.innerHTML=`<h3><a href='3'>${habilidad.Nombre}</a></h3><br>
-                            <p>${habilidad.Danio}</p>
- `
-       document.getElementById('habilidades').appendChild(cantidad)
-        
-       
-
-    })
+        cantidad.innerHTML=`<h3><a href='3'>${habilidad.Nombre}</a></h3>
+                            <p>Daño: ${habilidad.Danio}</p>`
+       document.getElementById('habilidades').appendChild(cantidad)      
+       })
     comprobador++
     console.log(comprobador)
 }
-// }
+
 
 const botonMago= document.getElementById("smago")
 botonMago.addEventListener('click',()=>{
@@ -116,8 +126,6 @@ finSeleccion.addEventListener('click',()=>{
      
 }
 )
-
-
 
 
 // //Combate(clase,enemigo)
