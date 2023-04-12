@@ -11,14 +11,40 @@ let eleccion=''
 let contador=0
 let comprobador= 0
 
+// const cursor=document.querySelector('.cursor');
+// window.addEventListener('mousemove',(e)=>{
+//     cursor.style.left=e.pageX +'px';
+//     cursor.style.top=e.pageY+'px';
+// })
 const logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
     logo.style.cursor='pointer'
 })
 logo.addEventListener('click',()=>{
-    alert('me clickeaste wachin')
+        Swal.fire({
+            title: 'Este juego ha sido realizado por',          
+            preConfirm: (login) => {
+          return fetch(`//api.github.com/users/bromualdo`)
+            .then(response => {                        
+                return response.json()
+                
+            })
+        
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            
+            imageUrl: result.value.avatar_url,
+            html:'<h1 id="wololo">Adrian Emmanuel Pozzi</h1>',
+            confirmButtonText:'que capo!'
+        })
+        }
+      })
 
 })
+
 
 const generarNombre=()=>{   
     nombre=prompt('Ingresa el nombre del aventurero')
@@ -28,18 +54,27 @@ const generarNombre=()=>{
         return nombre
     }
 
-const radios = document.getElementsByName('genre')
-for (let i=0; i < radios.length;i++)
-{
-    if (radios[i]==1 && radios[i].checked)
-        alert("cheque checka")
-}
+const radios = document.querySelectorAll('input[type=radio][name="gener0"]');
+    radios[0].addEventListener('click',()=>{        
+        botonMago.style.backgroundImage= "url('/Gameproject/images/wizard\ keeper.jpg')"
+        botonGuerrero.style.backgroundImage= "url('/Gameproject/images/warrior\ keeper.jpg')"
+        botonBardo.style.backgroundImage= "url('/Gameproject/images/bard\ keeper.jpg')"       
+    })
+    radios[1].addEventListener('click',()=>{        
+        botonMago.style.backgroundImage= "url('/Gameproject/images/shewizz.jpg')"
+        botonGuerrero.style.backgroundImage= "url('/Gameproject/images/shewarrior.jpg')"
+        botonBardo.style.backgroundImage= "url(/Gameproject/images/shebard.jpg)"
+    })
 
-const GenerarClassdesc=()=>{
-    document.getElementById("classDesc").innerText=`Tu nombre es ${clase.nombre} y la clase elegida es ${eleccion} ,
-    los stats son:\nFuerza: ${clase.fuerza}\nCarisma: ${clase.carisma}\nInteligencia: ${clase.inteligencia}\nDestreza: ${clase.destreza}
+const GenerarClassdesc=()=>{   
+    const cartelDesc=document.createElement('div')
+    cartelDesc.innerHTML=`<img src="/Gameproject/images/post2.png"  id="cartelDesc">`
+
+    document.getElementById("classDesc").innerText=`Nombre: ${clase.nombre} Clase: ${eleccion} 
+    Stats:\nFuerza: ${clase.fuerza}\nCarisma: ${clase.carisma}\nInteligencia: ${clase.inteligencia}\nDestreza: ${clase.destreza}
     Constitucion: ${clase.constitucion}\nVida: ${clase.vida}`
-    
+    document.body.append(cartelDesc)
+   
 }
 const mostrarHabilidades=()=>{
     
@@ -49,9 +84,13 @@ const mostrarHabilidades=()=>{
         comprobador--
     }
     const elemento =document.createElement('div')
-    elemento.id='habilidades'
+    const cartelhab=document.createElement('div')  
+    elemento.id='habilidades'  
+    cartelhab.innerHTML=`<img src="/Gameproject/images/post1.png"  id="cartelHab">`
+    
+    
     elemento.innerHTML=`<h2>Habilidades: </h2>`
-    document.body.appendChild(elemento)
+    document.body.append(cartelhab,elemento)
     clase.habilidades.forEach(habilidad => {      
         const cantidad =document.createElement('div')        
         cantidad.innerHTML=`<h3><a href='3'>${habilidad.Nombre}</a></h3>
@@ -95,7 +134,9 @@ botonBardo.addEventListener('click',()=>{
 })
 
 const finSeleccion=document.querySelector(".gameFlow")
-
+finSeleccion.addEventListener('mouseover',()=>{
+    finSeleccion.style.cursor='pointer'
+})
 finSeleccion.addEventListener('click',()=>{
     
     switch (contador) {

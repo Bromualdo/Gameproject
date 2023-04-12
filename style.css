@@ -4,6 +4,16 @@
     padding: 0;
 }
 
+/* .cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+    width: 60px;
+    height: 60px;
+    background-image: url(/Gameproject/images/cursor.png);
+    transform: translate(-36%,0% );
+} */
 body {
 background-image: url(/Gameproject/images/background2.jpg);
 background-size:cover;
@@ -11,10 +21,11 @@ background-repeat: no-repeat;
 margin: 0;
 padding: 0;
 position: absolute;
+animation: fadeIn 1s;
 }
 #sign{   
     position: fixed;
-    left: 0%;
+    
     width: 200px;
     
     
@@ -22,7 +33,7 @@ position: absolute;
 
 .header {    
     display: inline-block;    
-    /* background-image: url(/Gameproject/images/wooden_sign.png); */    
+   
    
     height:8% ;
     display:flex;
@@ -41,17 +52,10 @@ position: absolute;
     top: 2.5%;
     text-decoration:none;
 }
-#logo{
-    position: fixed;
-    left:90%;
-    top: 0.2%;
-    width: 100px;
-    height:100px;    
-}
 
 #logo{
     position: absolute;
-    left:90%;
+    left:55%;
     top: 0.2%;
     width: 100px;
     height:100px;
@@ -67,42 +71,76 @@ position: absolute;
     text-decoration:none;
   }
 
-#welcome {
+.genre{
+    width: 40px;
+    position: relative;   
+    
+}
 
+.genre:last{
+    width: 40px;
+    position: relative;   
     
-    width: 5% 5%;
-    
-    margin-top: 10%;    
-    margin-left: 800px;    
+}
+#choose {                
+    margin-left: 1550px;
+    right: 3%;    
     border: none;
+    position: relative;      
     
-    position: relative;
+   
 }
 #MoF{
-    margin-top: 2%;
-    margin-left: 800px; 
+    
+    top: 40%;
+    left: 15%;     
+    z-index: 1;
+    position: absolute;
+    
+    
 }
 
-#habilidades{
-   
-    margin-top: -65%;
+#sign2 {
+
+    position: relative;
+    width: 200px;     
+        }
+
+
+
+#cartelHab{
     width: 300px;
-    margin-left: 150px;
     position: absolute;
-    background-color: white;
+    top:31%;
+    left:10%;
+    animation: fadeIn 1s;
+}
+#habilidades{   
+    top:35%;
+    left:15%;
+    width: 300px;
+    background-image: url(/Gameproject/images/post1);
+    position: absolute;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .selector{
     list-style: none;
     width: 1000px;
     height: 500px;
-    margin-left: 50%;
+    margin-left: 30%;
     display: flex;
-   
-    padding-top: 5%;
-    margin-bottom: 50 00px;
+    padding-top: 2%;   
     
 }
-
 .selector li {
     display: inline-block;
     width: 100%;
@@ -111,13 +149,12 @@ position: absolute;
 
 }
 
-
-#smago{
-    
+#smago{    
     background-image: url(/Gameproject/images/wizard\ keeper.jpg);
+    background-position:top;
     background-size: cover;
-    border:  5px solid white;
-    
+   border:  5px solid white;  
+  
 }
 #smago:hover{  
     border:  5px solid blue;
@@ -126,6 +163,7 @@ position: absolute;
 #sguerrero{
     
     background-image: url(/Gameproject/images/warrior\ keeper.jpg);
+    background-position:top;    
     background-size: cover;
     border:  5px solid white;
 }
@@ -133,9 +171,13 @@ position: absolute;
 #sguerrero:hover{  
     border:  5px solid blue;
 }
+#sguerrero:active {  
+    border:  5px solid purple;
+}
 
 #sbardo{
     background-image: url(/Gameproject/images/bard\ keeper.jpg);
+    background-position:top;
     background-size: cover;
     border:  5px solid white;
 }
@@ -145,16 +187,28 @@ position: absolute;
 }
 
 #classDesc{
-margin-left: 80%;
-margin-top: 3%;
+    animation: fadeIn 1s;
+margin-left: 50%;
+margin-top: 4%;
 width: 300px;
 align-items: center;
-background-color: white;
+z-index: 2;
+position: relative;
+color:  black;
+}
+
+#cartelDesc{
+    animation: fadeIn 1s;
+    position: absolute;
+    width: 320px;
+    bottom: -4%; 
+    left:48%;
+    z-index: 1;
 }
 
 .gameFlow{
-    margin-left: 93%;
-    margin-top: 5%;
+    left:54.7%;
+    top:106.5%;
     position: absolute;
     color: white;
     
@@ -164,18 +218,24 @@ background-color: white;
 
 width: 200px;
 position: absolute;
-left: 87%;
-top:104.5%;
+left: 51%;
+top:105%;
 
 }
 
+#showscreen{
+    width: 300px;
+    left:40%;
+    position: relative;
+}
+
 #beggining{
-    background-image: url(images/papiro.jpg);
+    background-image: url(images/papiro.jpg);    
     background-size:cover;
     background-repeat: no-repeat;
     position:relative;
-    margin-left: 100%;
-    margin-top: 20%;
+    margin-left:10%;
+    margin-top: 5%;
     width: 600px;
     height: 500px;
     padding: 10%
