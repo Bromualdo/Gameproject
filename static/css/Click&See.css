@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+/* .cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+    width: 60px;
+    height: 60px;
+    background-image: url(/Gameproject/images/cursor.png);
+    transform: translate(-36%,0% );
+} */
+body {
+background-image: url(/Gameproject/static/assets/background2.jpg);
+background-size:cover;
+background-repeat: no-repeat;
+margin: 0;
+padding: 0;
+position: fixed;
+animation: fadeIn 1s;
+}
+
+
+#sign{   
+    position: fixed;
+    
+    width: 200px;
+    
+    
+}
+
+.header {    
+    display: inline-block;    
+   
+   
+    height:8% ;
+    display:flex;
+    
+    position: absolute;
+  
+  
+    
+}
+
+#inicio{
+    position: fixed;
+    font-family: 'Literata', serif;
+    font-size: 45px;
+    left: 2.5%;
+    top: 2.5%;
+    text-decoration:none;
+}
+
+#logo{
+    position: absolute;
+    left:55%;
+    top: 0.2%;
+    width: 100px;
+    height:100px;
+}
+#inicio a:link, a:visited {
+    color:white;
+    text-decoration:none;
+    cursor: auto;
+}
+
+#inicio a:link:active, a:visited:active {
+    color: white;
+    text-decoration:none;
+  }
+
+.genre{
+    width: 40px;
+    position: relative;   
+    
+}
+
+.genre:last{
+    width: 40px;
+    position: relative;   
+    
+}
+#choose {                
+    margin-left: 1550px;
+    right: 3%;    
+    border: none;
+    position: relative;      
+    
+   
+}
+#MoF{
+    
+    top: 40%;
+    left: 15%;     
+    z-index: 1;
+    position: absolute;
+    
+    
+}
+
+#sign2 {
+
+    position: relative;
+    width: 200px;     
+        }
+
+
+
+#cartelHab{
+    width: 300px;
+    position: absolute;
+    top:31%;
+    left:10%;
+    animation: fadeIn 1s;
+}
+#habilidades{   
+    top:35%;
+    left:15%;
+    width: 300px;    
+    position: absolute;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.selector{
+    list-style: none;
+    width: 1000px;
+    height: 500px;
+    margin-left: 30%;
+    display: flex;
+    padding-top: 2%;   
+    
+}
+.selector li {
+    display: inline-block;
+    width: 100%;
+    margin-right: 5%;
+    
+
+}
+
+#smago{    
+    background-image: url(/Gameproject/static/assets/wizard\ keeper.jpg);
+    background-position:top;
+    background-size: cover;
+   border:  5px solid white;  
+  
+}
+#smago:hover{  
+    border:  5px solid blue;
+}
+
+#sguerrero{
+    
+    background-image: url(/Gameproject/static/assets/warrior\ keeper.jpg);
+    background-position:top;    
+    background-size: cover;
+    border:  5px solid white;
+}
+
+#sguerrero:hover{  
+    border:  5px solid blue;
+}
+#sguerrero:active {  
+    border:  5px solid purple;
+}
+
+#sbardo{
+    background-image: url(/Gameproject/static/assets/bard\ keeper.jpg);
+    background-position:top;
+    background-size: cover;
+    border:  5px solid white;
+}
+
+#sbardo:hover{  
+    border:  5px solid blue;
+}
+
+#classDesc{
+    animation: fadeIn 1s;
+margin-left: 50%;
+margin-top: 4%;
+width: 300px;
+align-items: center;
+z-index: 2;
+position: relative;
+color:  black;
+}
+
+#cartelDesc{
+    animation: fadeIn 1s;
+    position: absolute;
+    width: 320px;
+    bottom: -4%; 
+    left:48%;
+    z-index: 1;
+}
+
+.gameFlow{
+    left:54.7%;
+    top:106.5%;
+    position: absolute;
+    color: white;
+    
+}
+
+.gameFlowbtn{
+
+width: 200px;
+position: absolute;
+left: 51%;
+top:105%;
+
+}
+
+#showscreen{
+    width: 300px;
+    left:40%;
+    position: relative;
+    
+}
+
+#beggining{
+    background-image: url(/Gameproject/static/assets/papiro.jpg);    
+    background-size:cover;
+    background-repeat: no-repeat;
+    position:relative;
+    margin-left:10%;
+    margin-top: 5%;
+    width: 600px;
+    height: 500px;
+    padding: 10%;
+    
+}

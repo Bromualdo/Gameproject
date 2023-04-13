@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/Gameproject/static/assets/Login.jpg);
+    background-size:100% 937px;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    position: 0;
+    
+    }
+
+#click{
+    color: rgb(128, 157, 47);
+    font-family: 'Titan One', cursive;
+    -webkit-text-stroke: 2px   white;
+    position: relative;
+    font-size: 100px;
+}
+
+#me{
+    position: fixed;
+    left: 55%;
+    top:62.5%;
+    color:  white;
+    font-family: 'Inspiration', cursive;
+    font-size: 28px;
+
+}
+
+#loginsign{
+    width: 500px;
+    position: relative;
+    left: 39%;
+    margin-top: 11%;    
+}
+
+#board1{
+    width: 80px;
+    
+    position: relative;
+    left: 23.7%;
+    margin-top: 4.8%;
+}
+
+#board2{
+    width: 95px;
+    
+    position: relative;
+    left: 18.8%;
+    margin-top: 13.7%;
+}
+
+#form{
+    width: 400px;
+    top: 37%;
+    left:41.5%;
+    position: absolute;
+}
+
+.textos {
+    color: white;
+    margin-left: 160px;
+    
+}
+
+#usuario{
+    margin-left: 175px;
+    
+}
+
+#btnlogin {
+    width: 150px;
+    position: relative;
+    margin-left: 17%;
+    margin-top: 25%;
+}
+
+#btnregistrarse{
+    width: 155px;
+    height: 50px;
+    position: relative;
+    left: -17.5%;
+    margin-top: 25%;
+    
+}
+
+#login{
+    position: relative;
+    right: -62%;
+    margin-top: 7%;
+    text-decoration: none;
+    font-family: 'Righteous', cursive;
+    color: white;
+    font-size: 30px;
+}
+
+#registrarse {
+    position: relative;
+    right: 12%;
+    
+    text-decoration: none;
+    font-family: 'Righteous', cursive;
+    color: white;
+    font-size: 25px;
+    
+}

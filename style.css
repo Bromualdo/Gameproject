@@ -15,7 +15,7 @@
     transform: translate(-36%,0% );
 } */
 body {
-background-image: url(/Gameproject/images/background2.jpg);
+background-image: url(/Gameproject/static/assets/background2.jpg);
 background-size:cover;
 background-repeat: no-repeat;
 margin: 0;
@@ -119,7 +119,7 @@ animation: fadeIn 1s;
     top:35%;
     left:15%;
     width: 300px;
-    background-image: url(/Gameproject/images/post1);
+    background-image: url(/Gameproject/static/assets/post1.png);
     position: absolute;
     animation: fadeIn 1s;
 }
@@ -150,7 +150,7 @@ animation: fadeIn 1s;
 }
 
 #smago{    
-    background-image: url(/Gameproject/images/wizard\ keeper.jpg);
+    background-image: url(/Gameproject/static/assets/wizard\ keeper.jpg);
     background-position:top;
     background-size: cover;
    border:  5px solid white;  
@@ -162,7 +162,7 @@ animation: fadeIn 1s;
 
 #sguerrero{
     
-    background-image: url(/Gameproject/images/warrior\ keeper.jpg);
+    background-image: url(/Gameproject/static/assets/warrior\ keeper.jpg);
     background-position:top;    
     background-size: cover;
     border:  5px solid white;
@@ -176,7 +176,7 @@ animation: fadeIn 1s;
 }
 
 #sbardo{
-    background-image: url(/Gameproject/images/bard\ keeper.jpg);
+    background-image: url(/Gameproject/static/assets/bard\ keeper.jpg);
     background-position:top;
     background-size: cover;
     border:  5px solid white;
@@ -230,7 +230,7 @@ top:105%;
 }
 
 #beggining{
-    background-image: url(images/papiro.jpg);    
+    background-image: url(/Gameproject/static/assets/papiro.jpg);    
     background-size:cover;
     background-repeat: no-repeat;
     position:relative;
@@ -238,6 +238,6 @@ top:105%;
     margin-top: 5%;
     width: 600px;
     height: 500px;
-    padding: 10%
-    ;
+    padding: 10%;
+    
 }
