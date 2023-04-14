@@ -4,6 +4,7 @@ const Inicio = () =>{
     document.getElementById('habilidades').remove() 
     document.getElementById('cartelHab').remove() 
     document.getElementById('cartelDesc').remove()
+    
     document.body.style.backgroundImage='url(/Gameproject/static/assets/background3_1.jpg)'
     introduccion()
 }

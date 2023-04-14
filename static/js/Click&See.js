@@ -1,4 +1,3 @@
-// D&D , simulador de creacion de personaje //
 let clase=''
 let confirmaPersonaje=false
 let iniciativaJugador=0
@@ -16,6 +15,7 @@ let comprobador= 0
 //     cursor.style.left=e.pageX +'px';
 //     cursor.style.top=e.pageY+'px';
 // })
+
 const logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
     logo.style.cursor='pointer'

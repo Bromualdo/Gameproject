@@ -5,6 +5,7 @@
 }
 
 body {
+    
     background-image: url(/Gameproject/static/assets/Login.jpg);
     background-size:100% 937px;
     background-repeat: no-repeat;
@@ -89,10 +90,30 @@ body {
     
 }
 
-#login{
+#botonconfirma{
+    width: 155px;
+    height: 50px;
     position: relative;
-    right: -62%;
-    margin-top: 7%;
+    left: 12%;
+    margin-top: 25%;
+    opacity: 0;
+}
+#confirma{
+    position:absolute;
+    right: 45%;
+    top:56.5%;
+    text-decoration: none;
+    font-family: 'Righteous', cursive;
+    color: white;
+    font-size: 30px;
+    opacity: 0;
+}
+
+
+#login{
+    position:absolute;
+    right: 41%;
+    top:56.5%;
     text-decoration: none;
     font-family: 'Righteous', cursive;
     color: white;
@@ -100,9 +121,9 @@ body {
 }
 
 #registrarse {
-    position: relative;
-    right: 12%;
-    
+    position: absolute;
+    right:49%;
+    top:56.8%;
     text-decoration: none;
     font-family: 'Righteous', cursive;
     color: white;
