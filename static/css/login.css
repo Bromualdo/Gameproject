@@ -1,3 +1,6 @@
+html {
+    zoom: 1;
+  }
 * {
     box-sizing: border-box;
     margin:0;
@@ -15,13 +18,7 @@ body {
     
     }
 
-#click{
-    color: rgb(128, 157, 47);
-    font-family: 'Titan One', cursive;
-    -webkit-text-stroke: 2px   white;
-    position: relative;
-    font-size: 100px;
-}
+
 
 #me{
     position: fixed;
@@ -31,6 +28,26 @@ body {
     font-family: 'Inspiration', cursive;
     font-size: 28px;
 
+
+}
+
+#click{
+    position: fixed;
+    left: 47.7%;
+    top:32.5%;
+
+    color:  white;
+    font-family: 'Suez One', serif;
+    font-size: 68px;
+}
+
+
+#logo 
+{
+width: 200px;
+position: absolute;
+left: 47%;
+bottom: 65%;
 }
 
 #loginsign{

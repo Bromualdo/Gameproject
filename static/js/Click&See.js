@@ -10,11 +10,11 @@ let eleccion=''
 let contador=0
 let comprobador= 0
 
-// const cursor=document.querySelector('.cursor');
-// window.addEventListener('mousemove',(e)=>{
-//     cursor.style.left=e.pageX +'px';
-//     cursor.style.top=e.pageY+'px';
-// })
+const sesion_activa=localStorage.getItem('sesion')
+
+
+const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
+console.log(encontre)
 
 const logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
@@ -38,7 +38,8 @@ logo.addEventListener('click',()=>{
             
             imageUrl: result.value.avatar_url,
             html:'<h1 id="wololo">Adrian Emmanuel Pozzi</h1>',
-            confirmButtonText:'que capo!'
+            confirmButtonText:'Gracias por jugar!'
+            
         })
         }
       })
@@ -47,6 +48,7 @@ logo.addEventListener('click',()=>{
 
 
 const generarNombre=()=>{   
+    
     nombre=prompt('Ingresa el nombre del aventurero')
 
         while (nombre.length  <4 || !isNaN(nombre))
@@ -79,8 +81,7 @@ const GenerarClassdesc=()=>{
 const mostrarHabilidades=()=>{
     
     if(comprobador==1){
-        document.getElementById('habilidades').remove()
-        
+        document.getElementById('habilidades').remove()        
         comprobador--
     }
     const elemento =document.createElement('div')
@@ -101,57 +102,76 @@ const mostrarHabilidades=()=>{
     console.log(comprobador)
 }
 
-
-const botonMago= document.getElementById("smago")
-botonMago.addEventListener('click',()=>{
+    if (encontre.clase==''){
+    
+    const botonMago= document.getElementById("smago")
+    botonMago.addEventListener('click',()=>{
     botonMago.style.borderBlockColor= 'blue'   
     generarNombre()
     clase=new Mago(nombre,valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
     eleccion="mago"
+    encontre.eleccion=eleccion
+    encontre.clase=clase
     mostrarHabilidades()   
     GenerarClassdesc()
-})
-const  botonGuerrero=document.getElementById("sguerrero")
-botonGuerrero.addEventListener('click',()=>{
+    
+    })
+    const  botonGuerrero=document.getElementById("sguerrero")
+    botonGuerrero.addEventListener('click',()=>{
     botonGuerrero.style.borderBlockColor= 'blue'
     
     generarNombre()
     clase=new Guerrero(nombre,valorAleatorio(5,10),valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
     eleccion="guerrero"
+    encontre.eleccion=eleccion
+    encontre.clase=clase
     mostrarHabilidades()
     GenerarClassdesc()         
-})
-const botonBardo=document.getElementById("sbardo")
-botonBardo.addEventListener('click',()=>{
-    botonBardo.style.borderBlockColor= 'blue'
-     
+    })
+    const botonBardo=document.getElementById("sbardo")
+    botonBardo.addEventListener('click',()=>{
+    botonBardo.style.borderBlockColor= 'blue'     
     generarNombre()
     clase=new Bardo(nombre,valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(5,10))
     eleccion="bardo"
+    encontre.eleccion=eleccion
+    encontre.clase=clase
     mostrarHabilidades()
     GenerarClassdesc()
     
 })
-
+}
 const finSeleccion=document.querySelector(".gameFlow")
 finSeleccion.addEventListener('mouseover',()=>{
     finSeleccion.style.cursor='pointer'
 })
+
 finSeleccion.addEventListener('click',()=>{
     
     switch (contador) {
-        case 0:
-            if (clase!=''){
-                let confirma=confirm(`${clase.nombre} quieres quedarte con estos valores?`)
+        case 0:            
+                let confirma=confirm(`${encontre.clase.nombre} quieres quedarte con estos valores?`)
                 if (confirma){
-                Inicio()}
-                contador++
+                Inicio()
+                console.log(encontre)               
+                for (item in arr_usuarios){
+                    if (encontre.usuario === item.usuario){
+                        item.clase=encontre.clase
+                        item.eleccion=encontre.eleccion                        
+                    }
+                }
+                arr_usuarios_json=JSON.stringify(arr_usuarios)
+                localStorage.setItem("usuarios",arr_usuarios_json)                
+                
+                contador++                
+              
                 } else{Swal.fire({
                     icon: 'error',
                     title: 'Error!',
                     text: 'Por favor selecciona un retrato!'                    
                   })}                      
-                  
+               
+
             break;
         case 1:
             Iniciox2()
@@ -165,10 +185,13 @@ finSeleccion.addEventListener('click',()=>{
             break;
     }    
      
+
 }
 )
 
+Yaexiste()
 
 // //Combate(clase,enemigo)
 
 // // Combate(clase,enemigo)
+

@@ -255,6 +255,19 @@ const GeneradorEnemigo = () =>{
     ArañaVar=new ArañaG(valorAleatorio(1,3),valorAleatorio(1,5),valorAleatorio(1,2))
     HloboVar=new Hlobo(valorAleatorio(1,5),valorAleatorio(1,2),valorAleatorio(1,4))
     enemigos.push(EsqueletoVar,ArañaVar,HloboVar)
+    // const resultado=enemigos.find(monster=>monster.nombre==='Esqueleto') //<<-- uso de la funcion find devuelve un solo numero
+    // const resultado=enemigos.filter(monster=>monster.destreza>1) //<<-- uso de la funcion filter devuelve todos los objetos que tengan destreza mayor que 1
+    // const resultado=enemigos.filter(monster=>monster.nombre.includes('e'))// <<-- uso del metodo includes para generar una busqueda mas detallada de la funcion filter
+    // const resultado=enemigos.some(monster=>monster.nombre==='Esqueleto') //<<-- uso de la funcion some para realizar una busqueda en el array , devuelve booleano
+    // const resultado=enemigos.map(monster=>monster.nombre) //<<-- uso de la funcion map sirve para modificar el array original ,y hace un nuevo array con las nuevas modificaciones
+    // const resultado=enemigos.map(monster=>{
+    //  return{ nombre: monster.nombre + " trolaso",
+    //         fuerza: monster.fuerza * 15,
+    //         destreza: monster.destreza *10,
+    //         constitucion:monster.constitucion *10
+    //     }
+    //     })   
+    // console.log(resultado)
     return enemigos[valorAleatorio(0,2)]
 }
 
@@ -266,8 +279,7 @@ const Hit = (numero1,numero2) =>{
     let acerto =false
     let variable=valorAleatorio(0,18)
     resultado=variable+numero1-numero2 
-    if (resultado >7){
-        
+    if (resultado >7){        
         return acerto=true 
     }
     else{
@@ -332,6 +344,6 @@ if (vidaEnem <=0){
 
 
 
-
+GeneradorEnemigo()
 
 
