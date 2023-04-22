@@ -291,6 +291,7 @@ const Hit = (numero1,numero2) =>{
 }
 
 const Combate =(var1,var2) =>{
+   
     vidaPlayer=var1.vida
     vidaEnem=var2.vida()
     console.log(vidaPlayer,vidaEnem,enemigo.nombre)
