@@ -11,13 +11,13 @@ class Mago{
     this.habilidades =[ {
         Nombre:'Misil Magico',
         Danio:10,
-        Desc:'un misil magico'}
+       }
     ,{Nombre:'Bola de Fuego',
     Danio:20,
-    Desc:'una bola de fiaaaa'},
+   },
     {Nombre:'Saeta de hielo',
     Danio:15,
-    Desc:'Una saeta de hielo'}]
+    }]
 
      
     this.danioHabilidad= function(number){

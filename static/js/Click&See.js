@@ -13,11 +13,7 @@ let comprobador= 0
 const botonMago= document.getElementById("smago")
 const  botonGuerrero=document.getElementById("sguerrero")
 const botonBardo=document.getElementById("sbardo")
-
-
-
 const sesion_activa=localStorage.getItem('sesion')
-
 
 const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
 console.log(encontre)
@@ -104,9 +100,7 @@ const mostrarHabilidades=()=>{
     const elemento =document.createElement('div')
     const cartelhab=document.createElement('div')  
     elemento.id='habilidades'  
-    cartelhab.innerHTML=`<img src="/Gameproject/static/assets/post1.png"  id="cartelHab">`
-    
-    
+    cartelhab.innerHTML=`<img src="/Gameproject/static/assets/post1.png"  id="cartelHab">`   
     elemento.innerHTML=`<h2>Habilidades: </h2>`
     document.body.append(cartelhab,elemento)
     clase.habilidades.forEach(habilidad => {      
@@ -115,8 +109,7 @@ const mostrarHabilidades=()=>{
                             <p>Daño: ${habilidad.Danio}</p>`
        document.getElementById('habilidades').appendChild(cantidad)      
        })
-    comprobador++
-    console.log(comprobador)
+    comprobador++ 
 }
 
 if (encontre.clase==''){
