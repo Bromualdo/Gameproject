@@ -14,13 +14,13 @@ com_btn.addEventListener('mouseover',()=>{
     com_btn.style.cursor='pointer'
 })
 
-const actualizar =()=>{
-    cont_turnos.innerText=`Tu turno!`
-}
+
+    
+
 
 com_btn.addEventListener('click',()=>{
     acu++
-    actualizar()
+    cont_turnos.innerText=`Tu turno!`
     if(comprobador==1){
         document.querySelectorAll('hab-group').remove()        
         comprobador--
@@ -29,19 +29,21 @@ com_btn.addEventListener('click',()=>{
     hab_disp()
     hab_enem_disp()
     comprobador++
-  
+    document.getElementById("comenzar").className="animate__animated animate__fadeOut"
+    setTimeout(() => {
+        document.getElementById("comenzar").remove()
+    }, 1000);    
 })
 
-const pepe=new Mago('Adrian',valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
+const pepe=new Mago('Adrian',valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(1,8))
 const enemyofpepe=new Esqueleto (valorAleatorio(1,4),valorAleatorio(1,2),valorAleatorio(1,10))
 
 const hab_disp=()=>{    
 pepe.habilidades.forEach(habilidad=>{
-    hab_cont++
-
-    // variableUsada=valorAleatorio(0,2)
+    hab_cont++    
     const habs=document.createElement('div')
     habs.id='hab'
+    habs.className="animate__animated animate__fadeIn"
     habs.innerHTML=`<h3 class='hab-group' id='hab${hab_cont}'><a >${habilidad.Nombre}</a></h3>`
     document.getElementById('hab-player').appendChild(habs)  
     
@@ -54,29 +56,34 @@ fire1.addEventListener('mouseover',()=>{
     fire1.style.cursor='pointer'
 })
 
-function usehab(number){
-    if (comprobador==1)
-    {
-        onom.remove()
-        comprobador--
-    }
-    const onom=document.createElement('div')
+function usehab(number){ 
+   
+    const onom=document.createElement('div') 
     onom.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
                     <h2 id='dmg'>${pepe.danioHabilidad(number)}</h2>`
-    onom.className="animate__animate animate__heartBeat"   
+    onom.className="animate__animated animate__heartBeat"   
     document.getElementById('Enemy').appendChild(onom)
     GiveDmg(pepe.danioHabilidad(number),enemyofpepe,enemyhp)
+
+    enemy_div.className="animate__animated animate__shakeX"
+    setTimeout(() =>{         
+        onom.className="animate__animated animate__zoomOut"
+      }, 2000);
     
-    
+    setTimeout(() =>{         
+        onom.remove()  
+      }, 3000);
+   
 }
 
 fire1.addEventListener('click',()=>{
+    
     usehab(0)
     setTimeout(() =>{ 
         turno_enemigo()  
-        
       }, 1000);
-})  
+
+    })  
     
 
 const fire2=document.getElementById('hab2')
@@ -85,10 +92,11 @@ fire2.addEventListener('mouseover',()=>{
 })
 
 fire2.addEventListener('click',()=>{
-    usehab(1)
+    usehab(1)    
     setTimeout(() =>{ 
         turno_enemigo()  
       }, 1000);
+   
  
 })
 const fire3=document.getElementById('hab3')
@@ -112,6 +120,7 @@ const hab_enem_disp=()=>{
         variableUsada=valorAleatorio(0,2)
         const enemyhabs=document.createElement('div')
         enemyhabs.id='enemyhabs'
+        enemyhabs.className="animate__animated animate__fadeIn"
         enemyhabs.innerHTML=`<h3 class='hab-enem_group' id='enemyhab${enemyhab_cont}'><a >${habilidad.Nombre}</a></h3>`
         document.getElementById('hab-enem').appendChild(enemyhabs)  
     
@@ -126,15 +135,19 @@ console.log(enemyofpepe.vida)
 
 
 
-function GiveDmg (param1,who,change){
-   
+function GiveDmg (param1,who,change){   
    
     who.vida-=param1
-    if (who.vida<=0){
-        who.vida=0
-        Swal.fire("Derrotaste a tu enemigo!, la aventura continua!")
-    }  
     
+    if (pepe.vida<=0){
+        pepe.vida=0
+        Swal.fire("Has sido derrotado , clic en inicio para volver a empezar")
+    }
+    if (enemyofpepe.vida<=0 ){
+        enemyofpepe.vida=0       
+        Swal.fire("Derrotaste a tu enemigo!, la aventura continua!")
+        cont_turnos.innerText=`Ganaste!`
+    }      
     change.innerText=`${who.vida}`
     change.className="hpbars animate__animated animate__flipInX" 
 }
@@ -146,6 +159,8 @@ setTimeout(() =>{
 // document.getElementById('Player').style.backgroundImage=`${encontre.clase.portrait}`
 
 const turno_enemigo = ()=>{
+
+    if(enemyofpepe.vida>0){
     variableUsada=valorAleatorio(0,2)
     cont_turnos.innerText=`Turno enemigo`
     const onom=document.createElement('div')
@@ -154,9 +169,19 @@ const turno_enemigo = ()=>{
     onom.className="animate__animate animate__heartBeat"   
     document.getElementById('Player').appendChild(onom)
     GiveDmg(enemyofpepe.danioHabilidad(variableUsada),pepe,playerhp)
-    console.log(enemyofpepe.habilidades[variableUsada].Nombre)
+    document.getElementById('Player').className="animate__animated animate__shakeX"    
+    variableUsada++
+    en_as=document.getElementById(`enemyhab${variableUsada}`)
+    en_as.style.color='rgb(154, 63, 154)'    
+    console.log(en_as)
     setTimeout(() =>{ 
         cont_turnos.innerText=`Tu turno!`
+        en_as.style.color='white'
         
-      }, 1500);
+      }, 1500)
+    }
+}
+
+const remover=(param1,param2)=>{
+    console.log('')
 }

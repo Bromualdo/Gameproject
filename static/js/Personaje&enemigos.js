@@ -148,9 +148,9 @@ class Esqueleto{
     this.vida=parseInt(40*(constitucion/5))
     this.portrait="url(/Gameproject/static/assets/skeletal_enemy.jpg)"
     this.habilidades =[ {
-        Nombre:"Carga osea",
+        Nombre:"Carga",
         Danio:30}
-    ,{Nombre:"Ataque con espada",
+    ,{Nombre:"Golpe",
     Danio:15},
     {Nombre:"Salto oseo"
     ,Danio:15}]
@@ -214,7 +214,7 @@ class Hlobo{
     this.constitucion=parseInt(constitucion)
     
     let habilidades =[ {
-        Nombre:"Garras y colmillos",
+        Nombre:"Mordida",
         Danio:15}
     ,{Nombre:"Ataque bestial",
     Danio:30}]

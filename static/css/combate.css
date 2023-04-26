@@ -89,11 +89,24 @@ position: absolute;
     padding-top:-10%;
 }
 #btn-comenzar{
+    background-image: url("/Gameproject/static/assets/comenzar.png");
+    background-size: contain;
     width: 250px;
     height: 100px;
     position: fixed;
-    margin-top: -60px;
+    margin-top: -65px;
+    padding-left:55px;
+    padding-top: 47px;
+    font-size: 25px;
+    color: white;
+    -webkit-text-stroke: 1.5px black;
+
 }
+
+#btn-comenzar:hover{
+    color: rgb(154, 63, 154)
+}
+
 
 #swords{
     position: fixed;
@@ -116,6 +129,9 @@ position: absolute;
     margin-left: -20px;
     font-family: 'Righteous', cursive;
     color: white;
+    -webkit-text-stroke: 0.8px black
+    
+    
    
 }
 .hab-enem_group{
@@ -130,7 +146,8 @@ position: absolute;
     font-size: 20px;
     margin-left: -80px;
     font-family: 'Righteous', cursive;
-    color: white;   
+    color: white;
+    -webkit-text-stroke: 0.8px black  
 }
 
 #hab1:hover {
