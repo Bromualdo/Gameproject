@@ -2,6 +2,9 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
+    font-family: 'Righteous', cursive;
+   
+   
 }
 
 body{
@@ -31,7 +34,7 @@ position: absolute;
     width: 400px;
     height: 600px;
     margin-left: 10%;
-    margin-top: 20%;
+    margin-top: 15%;
     border-radius: 5%;    
     padding-top:1%;   
 }
@@ -43,18 +46,22 @@ position: absolute;
     width: 400px;
     height: 600px;
     margin-left: 185%;
-    margin-top: -76%;
+    margin-top: -77%;
     border-radius: 5%;    
     padding-top:1%;   
     
 }
 
 #turnos{
-    padding-left: 48%;
+    padding-left: 40%;
     padding-top: 5%;
+    font-family: 'Righteous', cursive;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 50px;
 }
 #hab-player{
-    padding-top: 10%;
+    padding-top: 5%;
     padding-left: 10%;
     margin-right: 0%;
     display: relative;
@@ -67,17 +74,14 @@ position: absolute;
 }
 
 #hab-enem{
-    padding-top: -10%;
-    padding-left: 80%;    
-    margin-right: -20%; 
+    padding-top: -20%;
+    padding-left: 80%;  
     display: relative;
-  list-style-type: none;  
+    list-style-type: none;  
+    margin-top: -40%;
   
 }
 
-#hab-enem li {
-    margin-top: 10%;
-}
 
 #comenzar{
     position: relative;
@@ -87,26 +91,63 @@ position: absolute;
 #btn-comenzar{
     width: 250px;
     height: 100px;
+    position: fixed;
+    margin-top: -60px;
 }
 
 #swords{
     position: fixed;
     width: 275px;
     margin-left: 45%;
-    margin-top: -25%;
+    margin-top: -22.5%;
 }
 
-#hab1{
-    color: white;
-}
-
-#hab2{
-    color:blue
-}
 
 .hab-group{
-    margin-top: 10%;
+    margin-top: 2%;
+    background-image: url(/Gameproject/static/assets/hpbar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+    padding-left: 40px;
+    padding-top: 25px;
+    font-size: 20px;
+    margin-left: -20px;
+    font-family: 'Righteous', cursive;
+    color: white;
+   
 }
+.hab-enem_group{
+    
+    background-image: url(/Gameproject/static/assets/hpbar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+    padding-left: 40px;
+    padding-top: 25px;
+    font-size: 20px;
+    margin-left: -80px;
+    font-family: 'Righteous', cursive;
+    color: white;   
+}
+
+#hab1:hover {
+    color: rgb(154, 63, 154);
+    -webkit-text-stroke: 0.5px black;
+}
+
+#hab2:hover {
+    color: rgb(154, 63, 154);
+    -webkit-text-stroke: 0.5px black;
+}
+
+#hab3:hover {
+    color: rgb(154, 63, 154);
+    -webkit-text-stroke: 0.5px black;
+}
+
 
 #onodmg {
     background-image: url(/Gameproject/static/assets/dmgono.png);
@@ -122,5 +163,29 @@ position: absolute;
     font-family: 'League Gothic', sans-serif;
     font-size:700%;
     -webkit-text-stroke: 2px black;
+}
+.hpbars{
+    background-image: url(/Gameproject/static/assets/hpbar2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: 'Righteous', cursive;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 40px;
+    width: 260px;
+    height:200px;   
+    padding-left: 110px;
+    padding-top:40px;
+    position: fixed;
+    margin-top: 10px;
+}
+
+#hp-bar{
+    margin-left: 132px;
 
 }
+
+#enemy-bar{
+    margin-left: 1530px;
+}
+

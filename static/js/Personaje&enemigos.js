@@ -8,6 +8,7 @@ class Mago{
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
     this.vida=parseInt(40*(constitucion/5))
+    this.portrait="url(/Gameproject/static/assets/wizard3.jpg)"
     this.habilidades =[ {
         Nombre:'Misil Magico',
         Danio:10,
@@ -144,8 +145,9 @@ class Esqueleto{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    
-    let habilidades =[ {
+    this.vida=parseInt(40*(constitucion/5))
+    this.portrait="url(/Gameproject/static/assets/skeletal_enemy.jpg)"
+    this.habilidades =[ {
         Nombre:"Carga osea",
         Danio:30}
     ,{Nombre:"Ataque con espada",
@@ -153,18 +155,15 @@ class Esqueleto{
     {Nombre:"Salto oseo"
     ,Danio:15}]
 
-    this.vida=function(){
-        let vidatotal=20*(constitucion/5)
-        return vidatotal
-    } 
+  
 
     this.danioHabilidad= function(number){
         
-        let daniototal=habilidades[number].Danio*fuerza/5
+        let daniototal=this.habilidades[number].Danio*fuerza/5
         return daniototal
     }
     this.habilidadUsada = function(number) {
-        return habilidades[number].Nombre
+        return this.habilidades[number].Nombre
     }
     
     this.showhabilidades=function(){

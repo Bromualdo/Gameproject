@@ -18,6 +18,7 @@ const sesion_activa=localStorage.getItem('sesion')
 const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
 console.log(encontre)
 
+
 const logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
     logo.style.cursor='pointer'
@@ -59,7 +60,7 @@ const generarNombre=()=>{
      
     //   if (nombresao) {
     //     Swal.fire(`Entered email: ${nombresao}`)
-    //   }
+    //   }e
     
     nombre=prompt('Ingresa el nombre del aventurero')
 

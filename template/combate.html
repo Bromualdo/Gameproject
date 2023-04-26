@@ -4,34 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Click&See</title>
+
     
 </head>
 <body>
-    <div id="Player"></div>
-    
+    <div id="Player" class="animate__animated animate__fadeInLeft"></div>
+    <div id="hp-bar" class="hpbars"></div>
+    <div id="enemy-bar" class="hpbars"></div>
+     
     <div id="combat-place">
         <div id="cont-turnos"></div>
-        <p id="turnos">turnos</p>
+        <p id="turnos">Turnos</p>
         <div id='hab-player'></div>
-           
+        <div id='hab-enem'></div>
 
-        <ul id="hab-enem">
-            <li><button>habilidad 1</button></li>
-       
-            <li><button>habilidad 2</button></li>
-
-            <li><button>habilidad 3</button></li>
-        
-        </ul></ul>
     </div>
-        <img src="/Gameproject/static/assets/swords.png" id="swords"> 
+        <img src="/Gameproject/static/assets/swords.png" id="swords" class="animate__animated animate__backInDown"> 
         <div id="comenzar">
-            <img src="/Gameproject/static/assets/comenzar.png" id="btn-comenzar">
+            <img src="/Gameproject/static/assets/comenzar.png" id="btn-comenzar" >
             
         </div>
     </div>
-    <div id="Enemy"></div>    
+    <div id="Enemy" class="animate__animated animate__fadeInRight"></div>    
     
   
 
@@ -46,6 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Suez+One&display=swap" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  rel="stylesheet">
    
 </body>
 </html>
