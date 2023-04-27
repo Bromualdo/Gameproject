@@ -5,6 +5,8 @@ const show_hab =document.getElementById('hab-player')
 const enemy_div=document.getElementById('Enemy')
 const playerhp=document.getElementById('hp-bar')
 const enemyhp=document.getElementById('enemy-bar')
+const onom_enem=document.createElement('div') 
+const onom_player=document.createElement('div') 
 
 
 let acu =0
@@ -30,9 +32,12 @@ com_btn.addEventListener('click',()=>{
     hab_enem_disp()
     comprobador++
     document.getElementById("comenzar").className="animate__animated animate__fadeOut"
+    
+    
     setTimeout(() => {
         document.getElementById("comenzar").remove()
-    }, 1000);    
+    }, 1000);
+        
 })
 
 const pepe=new Mago('Adrian',valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(1,8))
@@ -49,23 +54,36 @@ pepe.habilidades.forEach(habilidad=>{
     
 })
 
+const esconder=(param1,param2,param3)=>{
 
+    document.getElementById(`hab${param2}`).className='hab-group animate__animated animate__fadeOut'    
+    document.getElementById(`hab${param3}`).className='hab-group animate__animated animate__fadeOut'
+    
+   
+    
+    
+    
+    }
 
+    
 const fire1=document.getElementById('hab1')
 fire1.addEventListener('mouseover',()=>{
     fire1.style.cursor='pointer'
 })
 
-function usehab(number){ 
-   
-    const onom=document.createElement('div') 
-    onom.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
+function usehab(number){    
+    
+    onom_enem.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
                     <h2 id='dmg'>${pepe.danioHabilidad(number)}</h2>`
-    onom.className="animate__animated animate__heartBeat"   
-    document.getElementById('Enemy').appendChild(onom)
+    onom_enem.className="animate__animated animate__heartBeat"   
+    document.getElementById('Enemy').appendChild(onom_enem)
     GiveDmg(pepe.danioHabilidad(number),enemyofpepe,enemyhp)
 
     enemy_div.className="animate__animated animate__shakeX"
+
+    setTimeout(() =>{
+    cont_turnos.innerText=`Turno enemigo`  
+    },400)
     setTimeout(() =>{         
         onom.className="animate__animated animate__zoomOut"
       }, 2000);
@@ -73,16 +91,13 @@ function usehab(number){
     setTimeout(() =>{         
         onom.remove()  
       }, 3000);
-   
-}
-
-fire1.addEventListener('click',()=>{
-    
-    usehab(0)
     setTimeout(() =>{ 
         turno_enemigo()  
-      }, 1000);
+      }, 1200);
+   }
 
+fire1.addEventListener('click',()=>{
+    usehab(0)
     })  
     
 
@@ -92,12 +107,7 @@ fire2.addEventListener('mouseover',()=>{
 })
 
 fire2.addEventListener('click',()=>{
-    usehab(1)    
-    setTimeout(() =>{ 
-        turno_enemigo()  
-      }, 1000);
-   
- 
+    usehab(1)   
 })
 const fire3=document.getElementById('hab3')
 fire3.addEventListener('mouseover',()=>{
@@ -106,13 +116,11 @@ fire3.addEventListener('mouseover',()=>{
 
 
 fire3.addEventListener('click',()=>{    
-    usehab(2)
-    setTimeout(() =>{ 
-        turno_enemigo()  
-      }, 1000);
-   
+    usehab(2)     
 })
 }
+
+
 
 const hab_enem_disp=()=>{    
     enemyofpepe.habilidades.forEach(habilidad=>{
@@ -141,12 +149,20 @@ function GiveDmg (param1,who,change){
     
     if (pepe.vida<=0){
         pepe.vida=0
-        Swal.fire("Has sido derrotado , clic en inicio para volver a empezar")
+        Swal.fire({            
+            width:400,
+            html:'<img src="/Gameproject/static/assets/baby.gif" id="loser"><br>'+
+            'Has sido derrotado!! ,haz clic en inicio para volver a empezar',
+            confirmButtonText:'Demonios!'
+    })
     }
     if (enemyofpepe.vida<=0 ){
         enemyofpepe.vida=0       
         Swal.fire("Derrotaste a tu enemigo!, la aventura continua!")
         cont_turnos.innerText=`Ganaste!`
+        setTimeout(()=>{
+        enemy_div.className="animate__animated animate__fadeOutUp"
+        },700)
     }      
     change.innerText=`${who.vida}`
     change.className="hpbars animate__animated animate__flipInX" 
@@ -162,12 +178,11 @@ const turno_enemigo = ()=>{
 
     if(enemyofpepe.vida>0){
     variableUsada=valorAleatorio(0,2)
-    cont_turnos.innerText=`Turno enemigo`
-    const onom=document.createElement('div')
-    onom.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
+     
+    onom_player.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
                     <h2 id='dmg'>${enemyofpepe.danioHabilidad(variableUsada)}</h2>`
-    onom.className="animate__animate animate__heartBeat"   
-    document.getElementById('Player').appendChild(onom)
+    onom_player.className="animate__animate animate__heartBeat"   
+    document.getElementById('Player').appendChild(onom_player)
     GiveDmg(enemyofpepe.danioHabilidad(variableUsada),pepe,playerhp)
     document.getElementById('Player').className="animate__animated animate__shakeX"    
     variableUsada++
@@ -182,6 +197,3 @@ const turno_enemigo = ()=>{
     }
 }
 
-const remover=(param1,param2)=>{
-    console.log('')
-}

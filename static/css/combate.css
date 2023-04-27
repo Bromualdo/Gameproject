@@ -108,7 +108,9 @@ position: absolute;
 }
 
 
+
 #swords{
+    
     position: fixed;
     width: 275px;
     margin-left: 45%;
@@ -206,3 +208,7 @@ position: absolute;
     margin-left: 1530px;
 }
 
+#loser{
+width:200px;
+height:200px
+}
