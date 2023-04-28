@@ -54,16 +54,6 @@ pepe.habilidades.forEach(habilidad=>{
     
 })
 
-const esconder=(param1,param2,param3)=>{
-
-    document.getElementById(`hab${param2}`).className='hab-group animate__animated animate__fadeOut'    
-    document.getElementById(`hab${param3}`).className='hab-group animate__animated animate__fadeOut'
-    
-   
-    
-    
-    
-    }
 
     
 const fire1=document.getElementById('hab1')

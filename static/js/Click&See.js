@@ -14,7 +14,9 @@ const botonMago= document.getElementById("smago")
 const  botonGuerrero=document.getElementById("sguerrero")
 const botonBardo=document.getElementById("sbardo")
 const sesion_activa=localStorage.getItem('sesion')
-
+const botonMagoTrans=document.createElement('div')
+const botonGuerreroTrans=document.createElement('div')
+const botonBardoTrans=document.createElement('div')  
 const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
 console.log(encontre)
 
@@ -245,4 +247,35 @@ Yaexiste()
 // //Combate(clase,enemigo)
 
 // // Combate(clase,enemigo)
+
+botonMago.addEventListener('mouseover',()=>{
+    botonMagoTrans.id="MagoTrans"    
+    botonMagoTrans.className="animate__animated animate__fadeIn"   
+    botonMago.appendChild(botonMagoTrans)
+    
+})
+botonMago.addEventListener('mouseleave',()=>{
+        botonMagoTrans.className="animate__animated animate__fadeOut"
+})
+
+botonGuerrero.addEventListener('mouseover',()=>{
+    botonGuerreroTrans.id="GuerreroTrans"   
+    botonGuerreroTrans.className="animate__animated animate__fadeIn"   
+    botonGuerrero.appendChild(botonGuerreroTrans)
+    
+})
+botonGuerrero.addEventListener('mouseleave',()=>{
+        botonGuerreroTrans.className="animate__animated animate__fadeOut"
+})
+
+botonBardo.addEventListener('mouseover',()=>{
+    botonBardoTrans.id="BardoTrans"
+    botonBardoTrans.style.opacity=1
+    botonBardoTrans.className="animate__animated animate__fadeIn"   
+    botonBardo.appendChild(botonBardoTrans)
+    
+})
+botonBardo.addEventListener('mouseleave',()=>{
+    botonBardoTrans.className="animate__animated animate__fadeOut"
+})
 

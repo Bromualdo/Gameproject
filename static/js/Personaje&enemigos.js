@@ -8,7 +8,7 @@ class Mago{
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
     this.vida=parseInt(40*(constitucion/5))
-    this.portrait="url(/Gameproject/static/assets/wizard3.jpg)"
+    this.portrait="url(/Gameproject/static/assets/wizard2.jpg)"
     this.habilidades =[ {
         Nombre:'Misil Magico',
         Danio:10,
@@ -19,7 +19,6 @@ class Mago{
     {Nombre:'Saeta de hielo',
     Danio:15,
     }]
-
      
     this.danioHabilidad= function(number){
         
@@ -49,6 +48,7 @@ class Guerrero{
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
     this.vida=parseInt(60*(constitucion/5))
+    this.portrait="url(/Gameproject/static/assets/wizard3.jpg)"
     this.habilidades =[ {
         Nombre:"Golpe Brutal",
         Danio:20}
@@ -85,6 +85,7 @@ class Bardo{
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
     this.vida=parseInt(50*(constitucion/5)) 
+    this.portrait="url(/Gameproject/static/assets/bard3.jpg)"
     this.habilidades =[ {
         Nombre:"La llamada del viajero",
         Danio:20}
@@ -212,7 +213,7 @@ class Hlobo{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    
+    this.portrait="url(/Gameproject/static/assets/skeletal_enemy.jpg)"
     let habilidades =[ {
         Nombre:"Mordida",
         Danio:15}

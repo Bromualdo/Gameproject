@@ -21,9 +21,8 @@ const allow = ()=>{
         
         
         if (found.usuario===gimme_usuario && found.password===gimme_password){
-            sesion_usuario=localStorage.setItem('sesion',found.usuario)
+            sesion_usuario=localStorage.setItem('sesion',found.usuario)           
             
-            alert('bienvenido')
             window.location ="/Gameproject/template/index.html"
             
             
@@ -87,4 +86,4 @@ function save_usuario(){
 }
 
 
-botonRegistrarse.addEventListener('click',save_usuario)
+
