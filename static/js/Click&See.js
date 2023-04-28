@@ -79,14 +79,27 @@ const radios = document.querySelectorAll('input[type=radio][name="gener0"]');
         botonBardo.style.backgroundImage= "url(/Gameproject/static/assets/shebard.jpg)"
     })
 
-const GenerarClassdesc=()=>{   
-    const cartelDesc=document.createElement('div')
-    cartelDesc.innerHTML=`<img src="/Gameproject/static/assets/post2.png"  id="cartelDesc">`
-
-    document.getElementById("classDesc").innerText=`Nombre: ${clase.nombre} Clase: ${eleccion} 
-    Stats:\nFuerza: ${clase.fuerza}\nCarisma: ${clase.carisma}\nInteligencia: ${clase.inteligencia}\nDestreza: ${clase.destreza}
+const GenerarClassdesc=()=>{
+        switch (eleccion) {
+            case "mago":
+                
+                document.getElementById("classDesc").style.left='44.5%'
+                document.getElementById("classDesc").className="animate__animated animate__fadeInDown"
+                break;
+            case "guerrero":
+                document.getElementById("classDesc").style.left='72%'
+                document.getElementById("classDesc").className="animate__animated animate__fadeInDown"
+                break;
+            case "bardo":
+                document.getElementById("classDesc").style.left='99.5%' 
+                document.getElementById("classDesc").className="animate__animated animate__fadeInDown"
+                break;           
+        }
+    
+    document.getElementById("classDesc").style.opacity=1  
+        document.getElementById("classDesc").innerText=`Fuerza: ${clase.fuerza}\nCarisma: ${clase.carisma}\nInteligencia: ${clase.inteligencia}\nDestreza: ${clase.destreza}
     Constitucion: ${clase.constitucion}\nVida: ${clase.vida}`
-    document.body.append(cartelDesc)
+    
    
 }
 const mostrarHabilidades=()=>{
@@ -98,12 +111,12 @@ const mostrarHabilidades=()=>{
     const elemento =document.createElement('div')
     const cartelhab=document.createElement('div')  
     elemento.id='habilidades'  
-    cartelhab.innerHTML=`<img src="/Gameproject/static/assets/post1.png"  id="cartelHab">`   
+    cartelhab.id="cartelHab"   
     elemento.innerHTML=`<h2>Habilidades: </h2>`
     document.body.append(cartelhab,elemento)
     clase.habilidades.forEach(habilidad => {      
         const cantidad =document.createElement('div')        
-        cantidad.innerHTML=`<h3><a href='3'>${habilidad.Nombre}</a></h3>
+        cantidad.innerHTML=`<h3 id='habnom'>${habilidad.Nombre}</h3>
                             <p>Daño: ${habilidad.Danio}</p>`
        document.getElementById('habilidades').appendChild(cantidad)      
        })

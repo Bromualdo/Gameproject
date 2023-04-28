@@ -87,11 +87,11 @@ class Bardo{
     this.vida=parseInt(50*(constitucion/5)) 
     this.portrait="url(/Gameproject/static/assets/bard3.jpg)"
     this.habilidades =[ {
-        Nombre:"La llamada del viajero",
+        Nombre:"Cancion violenta",
         Danio:20}
     ,{Nombre:"Notas Punzantes",
     Danio:15},
-    {Nombre:"Instrumento desafinado"
+    {Nombre:"Desafinacion"
     ,Danio:10}]
 
  

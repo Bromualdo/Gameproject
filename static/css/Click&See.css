@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
+ 
     font-family: 'Righteous', cursive;
 }
 
@@ -50,7 +51,7 @@ animation: fadeIn 1s;
 
 #logo{
     position: absolute;
-    left:90%;
+    left:80%;
     top: 0.2%;
     width: 100px;
     height:100px;
@@ -67,9 +68,45 @@ animation: fadeIn 1s;
   }
 
 #generarnombre{
+    background-image: url(/Gameproject/static/assets/sign.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 150px;
     position: block;
     margin-left:800px;
+    margin-bottom: 0%;
     margin-top: 120px;
+    padding-top: 1%;
+    
+}
+
+#nombreform{    
+    width: 150px;
+    display: inline-block;
+    margin: 0%;  
+        
+    
+}
+
+#nombrelabel{
+    padding:0% 0% 0% 10%;
+    margin:0%;
+    color:white 
+    
+      
+}
+
+
+#nameconfirm{
+    background-image: url(/Gameproject/static/assets/bconfirm.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0% 45%;
+    padding: 0%;
+    width: 50px;
+    height: 50px;
+    display: inline-block; 
 }
 
 .genre{
@@ -110,15 +147,23 @@ animation: fadeIn 1s;
 
 
 #cartelHab{
+    margin: 0%;
+    background-image: url(/Gameproject/static/assets/papiro.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 300px;
+    height: 400px;
     position: absolute;
     top:31%;
-    left:10%;
-    animation: fadeIn 1s;
+    left:8%;   
+}
+
+#habnom{
+    color: rgb(83, 83, 205);
 }
 #habilidades{   
-    top:35%;
-    left:15%;
+    top:37%;
+    left:12%;
     width: 300px;    
     position: absolute;
     animation: fadeIn 1s;
@@ -136,9 +181,10 @@ animation: fadeIn 1s;
     list-style: none;
     width: 1000px;
     height: 500px;
-    margin-left: 50%;
+    margin-left: 45%;
     display: flex;
     padding-top: 2%;   
+    margin-top: -5%;
     
 }
 .selector li {
@@ -149,9 +195,7 @@ animation: fadeIn 1s;
     border:  1.75px black solid;
 }
 
-.selector li:hover{
-    border-color: black;
-}
+
 
 
 #smago{    
@@ -210,40 +254,40 @@ animation: fadeIn 1s;
 }
 
 #classDesc{
-    animation: fadeIn 1s;
-margin-left: 50%;
-margin-top: 4%;
-width: 300px;
-align-items: center;
-z-index: 2;
-position: relative;
-color:  black;
-}
-
-#cartelDesc{
-    animation: fadeIn 1s;
-    position: absolute;
+    background-image: url(/Gameproject/static/assets/papiro2.png);   
+    background-size: contain; 
+    background-repeat: no-repeat;    
     width: 320px;
-    bottom: -4%; 
-    left:48%;
-    z-index: 1;
+    height: 300px;
+    opacity: 0;
+    
+    margin-top: -2%;
+    width: 300px;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+   
+    padding-left: 5%;
+    padding-top: 0.8%;
 }
 
 .gameFlow{
-    left:54.7%;
-    top:106.5%;
-    position: absolute;
+    background-image: url(/Gameproject/static/assets/botoncontinue.png);  
     color: white;
+    width: 200px;
+    height: 100px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    left:75%;
+    top:88%;
+    padding-left: 5.2%;
+    padding-top: 0.5%;
+    position: absolute;   
     
 }
 
-.gameFlowbtn{
-
-width: 200px;
-position: absolute;
-left: 51%;
-top:105%;
-
+.gameFlow:hover{
+    color:  rgb(255, 229, 80);
 }
 
 #showscreen{
