@@ -24,6 +24,7 @@ const allow = ()=>{
             sesion_usuario=localStorage.setItem('sesion',found.usuario)           
             
             window.location ="/Gameproject/template/index.html"
+            bienvenida()
             
             
         break
@@ -84,6 +85,5 @@ function save_usuario(){
         })
     } 
 }
-
 
 

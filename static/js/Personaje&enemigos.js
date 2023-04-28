@@ -180,11 +180,11 @@ class ArañaG{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    
+    this.portrait="url(/Gameproject/static/assets/spider.jpg)"
     let habilidades =[ {
-        Nombre:"Ataque ponzoñoso",
+        Nombre:"Mordida",
         Danio:15}
-    ,{Nombre:"Mordida entumecedora",
+    ,{Nombre:"Veneno",
     Danio:10}]
    
     this.vida=function(){
@@ -213,7 +213,7 @@ class Hlobo{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.portrait="url(/Gameproject/static/assets/skeletal_enemy.jpg)"
+    this.portrait="url(/Gameproject/static/assets/werewolf.jpg)"
     let habilidades =[ {
         Nombre:"Mordida",
         Danio:15}

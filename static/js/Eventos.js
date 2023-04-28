@@ -56,7 +56,7 @@ const introduccion =()=>{
 const Iniciox2 = () =>{
     console.log("antes ",clase.vida)
     enemigo=GeneradorEnemigo()  
-    Combate(clase,enemigo)
+    
     
 document.getElementById('select-screen').innerHTML=`<p id='beggining'>Al aceptar la tarea de Cedric, el anciano del pueblo, decides comenzar tu investigación hablando con los habitantes de Millfield. 
 Empiezas a hacer preguntas y pronto te enteras de que las personas desaparecidas tenían poco en común, 
