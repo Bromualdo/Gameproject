@@ -29,6 +29,10 @@ console.log(encontre)
 const logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
     logo.style.cursor='pointer'
+    logo.className="animate__animated animate__headShake"
+})
+logo.addEventListener('mouseleave',()=>{
+    logo.className='useless'
 })
 logo.addEventListener('click',()=>{
         
@@ -216,6 +220,7 @@ finSeleccion.addEventListener('click',()=>{
                 
                 if (result.isConfirmed) {
                   Swal.fire('Saved!', '', 'success')
+                  console.log('entro')
                   Inicio()
                 console.log(encontre)               
                 for (item in arr_usuarios){

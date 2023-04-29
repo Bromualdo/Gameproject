@@ -3,8 +3,9 @@ const Inicio = () =>{
     document.getElementById('classDesc').remove()           
     document.getElementById('habilidades').remove() 
     document.getElementById('cartelHab').remove()    
-    
-    
+    document.getElementById('generarnombre').remove()
+    document.getElementById('MoF').remove()
+    document.getElementById('choose').remove()
     introduccion()
 }
 

@@ -305,15 +305,17 @@ animation: fadeIn 1s;
 }
 
 #beggining{
-    background-image: url(/Gameproject/static/assets/papiro.jpg);    
-    background-size:cover;
+    background-image: url(/Gameproject/static/assets/papiro3.png);    
+    background-size:contain;
     background-repeat: no-repeat;
     position:relative;
-    margin-left:10%;
-    margin-top: 5%;
-    width: 600px;
-    height: 500px;
-    padding: 10%;
+    margin-left:105%;
+    margin-top: 25%;
+    width: 900px;
+    height: 900px;
+    padding: 50%;
+    padding-left: 35%;
+    padding-right: 80%;
     
 }
 
