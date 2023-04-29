@@ -5,8 +5,11 @@ const arr_usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
 const botonLogin=document.getElementById('login')   
 botonLogin.addEventListener('mouseover',()=>{
     botonLogin.style.cursor='pointer'
+    document.getElementById('login_shake').className="animate__animated animate__rubberBand"
 })
-
+botonLogin.addEventListener('mouseleave',()=>{
+document.getElementById('login_shake').className="useless"
+})
 
 const allow = ()=>{
         let gimme_usuario=document.getElementById('in-user').value
@@ -24,7 +27,6 @@ const allow = ()=>{
             sesion_usuario=localStorage.setItem('sesion',found.usuario)           
             
             window.location ="/Gameproject/template/index.html"
-            bienvenida()
             
             
         break
@@ -52,7 +54,13 @@ botonLogin.addEventListener('click',allow)
 const botonRegistrarse=document.getElementById('registrarse')
 botonRegistrarse.addEventListener('mouseover',()=>{
     botonRegistrarse.style.cursor='pointer'
+    document.getElementById('register_pulse').className="animate__animated animate__pulse"  
 })
+
+botonRegistrarse.addEventListener('mouseleave',()=>{
+    document.getElementById('register_pulse').className="useless"    
+})
+
 function save_usuario(){
     botonRegistrarse.style.cursor='pointer'
     let give_usuario=document.getElementById('in-user').value
@@ -87,3 +95,4 @@ function save_usuario(){
 }
 
 
+botonRegistrarse.addEventListener('click',save_usuario)

@@ -3,7 +3,7 @@ const Inicio = () =>{
     document.getElementById('classDesc').remove()           
     document.getElementById('habilidades').remove() 
     document.getElementById('cartelHab').remove()    
-    document.getElementById('cartelDesc').remove()    
+    
     
     introduccion()
 }
@@ -56,17 +56,9 @@ const introduccion =()=>{
 const Iniciox2 = () =>{
     console.log("antes ",clase.vida)
     enemigo=GeneradorEnemigo()  
-    
-    
-document.getElementById('select-screen').innerHTML=`<p id='beggining'>Al aceptar la tarea de Cedric, el anciano del pueblo, decides comenzar tu investigación hablando con los habitantes de Millfield. 
-Empiezas a hacer preguntas y pronto te enteras de que las personas desaparecidas tenían poco en común, 
-excepto que todas vivían cerca del bosque al sur del pueblo.
-Decides dirigirte al bosque para investigar más a fondo. Al entrar en el bosque, te encuentras con una cabaña aislada en medio de los árboles. 
-Al acercarte, te das cuenta de que hay una extraña energía que emana de la cabaña.
-Con cautela, te acercas a la puerta y la abres. Dentro, encuentras a un anciano sentado frente a un libro enorme.
-Te presenta como un mago y te explica que ha estado investigando un antiguo hechizo que ha sido despertado en el bosque.</p>`
-    console.log(clase.vida)
 }
+    
+
 
 const Acto1 = () =>{
     if (eleccion == 'mago')
