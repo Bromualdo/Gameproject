@@ -78,7 +78,7 @@ class Guerrero{
 
 class Bardo{
     constructor(fuerza,inteligencia,carisma,destreza,constitucion){
-   this.name='Bardo'
+   this.nombre='Bardo'
     this.fuerza=parseInt(fuerza)
     this.inteligencia=parseInt(inteligencia)
     this.carisma=parseInt(carisma)
@@ -182,17 +182,22 @@ class ArañaG{
     this.constitucion=parseInt(constitucion)
     this.vida=parseInt(20*(constitucion*2))
     this.portrait="url(/Gameproject/static/assets/spider.jpg)"
-    this.habilidades =[ {
+    this.habilidades =[{
         Nombre:"Mordida",
-        Danio:15}
-    ,{Nombre:"Veneno",
-    Danio:10}]
+        Danio:15},
+        {Nombre:"Veneno",
+        Danio:10,
+        },{
+        Nombre:"Enredar",
+        Danio:15   
+        }
+    ]
    
    
 
     this.danioHabilidad= function(number){
         
-        let daniototal=habilidades[number].Danio*fuerza/5
+        let daniototal=this.habilidades[number].Danio*fuerza/5
         return daniototal
     }
     this.habilidadUsada = function(number) {
@@ -222,7 +227,7 @@ class Hlobo{
    
     this.danioHabilidad= function(number){
         
-        let daniototal=habilidades[number].Danio*fuerza/5
+        let daniototal=this.habilidades[number].Danio*fuerza/5
         return daniototal
     }
     this.habilidadUsada = function(number) {

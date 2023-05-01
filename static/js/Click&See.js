@@ -209,7 +209,7 @@ if (encontre.clase==''){
             botonBardo.style.backgroundImage= "url('/Gameproject/static/assets/bard3.jpg')"
                     
         }   
-        portrait=botonBardo.style.backgroundImage
+        encontre.retrato=botonBardo.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
         mostrarHabilidades()

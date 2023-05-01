@@ -57,10 +57,10 @@ switch (element.nombre) {
               
             eleccion= new Mago(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
         break;
-    case 'guerrero':
+    case 'Guerrero':
             eleccion= new Guerrero(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
         break;            
-    case 'bardo':
+    case 'Bardo':
             eleccion=new Bardo(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
         break;
     case 'Esqueleto':
