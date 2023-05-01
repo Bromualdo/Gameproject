@@ -6,7 +6,78 @@ const enemy_div=document.getElementById('Enemy')
 const playerhp=document.getElementById('hp-bar')
 const enemyhp=document.getElementById('enemy-bar')
 const onom_enem=document.createElement('div') 
-const onom_player=document.createElement('div') 
+const onom_player=document.createElement('div')
+
+const continue_sesion=localStorage.getItem('sesion')
+const continue_user=arr_usuarios.find(encontrado=>encontrado.usuario==continue_sesion)
+
+console.log(continue_user.clase)
+
+
+logo=document.getElementById('logo')
+logo.addEventListener('mouseover',()=>{
+    logo.style.cursor='pointer'
+    logo.className="animate__animated animate__headShake"
+})
+logo.addEventListener('mouseleave',()=>{
+    logo.className='useless'
+})
+logo.addEventListener('click',()=>{
+        
+        Swal.fire({
+            title: 'Este juego ha sido realizado por',          
+            preConfirm: (login) => {
+          return fetch(`//api.github.com/users/bromualdo`)
+            .then(response => {                        
+                return response.json()
+                
+            })
+        
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            
+            imageUrl: result.value.avatar_url,
+            html:'<h1 id="wololo">Adrian Emmanuel Pozzi</h1>',
+            confirmButtonText:'Gracias por jugar!'
+            
+        })
+        }
+      })
+
+})
+
+function quien_es(element){
+    eleccion=''
+switch (element.nombre) { 
+   
+    case 'Mago':   
+              
+            eleccion= new Mago(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
+        break;
+    case 'guerrero':
+            eleccion= new Guerrero(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
+        break;            
+    case 'bardo':
+            eleccion=new Bardo(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
+        break;
+    case 'Esqueleto':
+            eleccion= new Esqueleto(element.fuerza,element.destreza,element.constitucion)
+        break;
+    case 'Hombre Lobo':
+            eleccion= new Hlobo(element.fuerza,element.destreza,element.constitucion)
+        break;
+        case 'Araña Grande':
+            eleccion= new ArañaG(element.fuerza,element.destreza,element.constitucion)
+        break;
+    
+}
+return eleccion
+
+
+}
 
 
 let comprobeta= 0
@@ -41,11 +112,16 @@ com_btn.addEventListener('click',()=>{
         
 })
 
-const pepe=new Mago('Adrian',valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(1,8))
-const enemyofpepe=new Esqueleto (valorAleatorio(1,4),valorAleatorio(1,2),valorAleatorio(1,10))
+const player=quien_es(continue_user.clase)
+
+const enemyofplayerJSON=JSON.parse(localStorage.getItem('enemigo'))
+
+const enemyofplayer=quien_es(enemyofplayerJSON)
+console.log(enemyofplayer)
+
 
 const hab_disp=()=>{    
-pepe.habilidades.forEach(habilidad=>{
+player.habilidades.forEach(habilidad=>{
     hab_cont++    
     const habs=document.createElement('div')
     habs.id='hab'
@@ -65,10 +141,10 @@ fire1.addEventListener('mouseover',()=>{
 function usehab(number){    
     
     onom_enem.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
-                    <h2 id='dmg'>${pepe.danioHabilidad(number)}</h2>`
+                    <h2 id='dmg'>${player.danioHabilidad(number)}</h2>`
     onom_enem.className="animate__animated animate__heartBeat"   
     document.getElementById('Enemy').appendChild(onom_enem)
-    GiveDmg(pepe.danioHabilidad(number),enemyofpepe,enemyhp)
+    GiveDmg(player.danioHabilidad(number),enemyofplayer,enemyhp)
 
     enemy_div.className="animate__animated animate__shakeX"
 
@@ -111,10 +187,10 @@ fire3.addEventListener('click',()=>{
 })
 }
 
-
+console.log(enemyofplayer)
 
 const hab_enem_disp=()=>{    
-    enemyofpepe.habilidades.forEach(habilidad=>{
+    enemyofplayer.habilidades.forEach(habilidad=>{
         enemyhab_cont++
         variableUsada=valorAleatorio(0,2)
         const enemyhabs=document.createElement('div')
@@ -126,11 +202,8 @@ const hab_enem_disp=()=>{
     })
 }
 
-playerhp.innerText=`${pepe.vida}`
-enemyhp.innerText=`${enemyofpepe.vida}`
-
-console.log(enemyofpepe.vida)
-
+playerhp.innerText=`${player.vida}`
+enemyhp.innerText=`${enemyofplayer.vida}`
 
 
 
@@ -138,8 +211,8 @@ function GiveDmg (param1,who,change){
    
     who.vida-=param1
     
-    if (pepe.vida<=0){
-        pepe.vida=0
+    if (player.vida<=0){
+        player.vida=0
         Swal.fire({            
             width:400,
             html:'<img src="/Gameproject/static/assets/baby.gif" id="loser"><br>'+
@@ -147,8 +220,8 @@ function GiveDmg (param1,who,change){
             confirmButtonText:'Demonios!'
     })
     }
-    if (enemyofpepe.vida<=0 ){
-        enemyofpepe.vida=0       
+    if (enemyofplayer.vida<=0 ){
+        enemyofplayer.vida=0       
         Swal.fire("Derrotaste a tu enemigo!, la aventura continua!")
         cont_turnos.innerText=`Ganaste!`
         setTimeout(()=>{
@@ -159,27 +232,24 @@ function GiveDmg (param1,who,change){
     change.className="hpbars animate__animated animate__flipInX" 
 }
 
-setTimeout(() =>{ 
-  console.log("wachin")  
-}, 4000);
-// document.getElementById('Enemy').style.backgroundImage=`${enemyofpepe.portrait}`
-// document.getElementById('Player').style.backgroundImage=`${encontre.clase.portrait}`
+document.getElementById('Enemy').style.backgroundImage=`${enemyofplayer.portrait}`
+document.getElementById('Player').style.backgroundImage=`${continue_user.retrato}`
 
 const turno_enemigo = ()=>{
 
-    if(enemyofpepe.vida>0){
+    if(enemyofplayer.vida>0){
     variableUsada=valorAleatorio(0,2)
      
     onom_player.innerHTML=`<img src="/Gameproject/static/assets/dmgono.png"  id="onodmg">
-                    <h2 id='dmg'>${enemyofpepe.danioHabilidad(variableUsada)}</h2>`
+                    <h2 id='dmg'>${enemyofplayer.danioHabilidad(variableUsada)}</h2>`
     onom_player.className="animate__animate animate__heartBeat"   
     document.getElementById('Player').appendChild(onom_player)
-    GiveDmg(enemyofpepe.danioHabilidad(variableUsada),pepe,playerhp)
+    GiveDmg(enemyofplayer.danioHabilidad(variableUsada),player,playerhp)
     document.getElementById('Player').className="animate__animated animate__shakeX"    
     variableUsada++
     en_as=document.getElementById(`enemyhab${variableUsada}`)
     en_as.style.color='rgb(154, 63, 154)'    
-    console.log(en_as)
+    
     setTimeout(() =>{ 
         cont_turnos.innerText=`Tu turno!`
         en_as.style.color='white'

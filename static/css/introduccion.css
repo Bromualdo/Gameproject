@@ -80,12 +80,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     list-style: none;
-    width: 400px;
+    width: 350px;
     height: 595px;
     margin-left: 7%;
     display: flex;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 12.5%;
+    border:  1.75px black solid;
     
 }
 
@@ -93,15 +94,16 @@ body {
     background-image: url(/Gameproject/static/assets/sick6.jpg);
     background-size: cover; 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 60%;
     list-style: none;
-    width: 400px;
+    width: 350px;
     height: 595px;
     margin-left: 75%;
     display: flex;
-    border-radius: 5px;
+    border-radius: 10px;
     padding-top: 2%;   
     margin-top: -31%;
+    border:  1.75px black solid;
    
 }
 

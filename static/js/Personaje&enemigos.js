@@ -1,7 +1,7 @@
 
 class Mago{
-    constructor(nombre,fuerza,inteligencia,carisma,destreza,constitucion){
-    this.nombre=nombre
+    constructor(fuerza,inteligencia,carisma,destreza,constitucion){
+    this.nombre='Mago'
     this.fuerza=parseInt(fuerza)
     this.inteligencia=parseInt(inteligencia)
     this.carisma=parseInt(carisma)
@@ -40,8 +40,8 @@ class Mago{
 
 
 class Guerrero{
-    constructor(nombre,fuerza,inteligencia,carisma,destreza,constitucion){
-    this.nombre=nombre
+    constructor(fuerza,inteligencia,carisma,destreza,constitucion){
+    this.nombre='Guerrero'
     this.fuerza=parseInt(fuerza)
     this.inteligencia=parseInt(inteligencia)
     this.carisma=parseInt(carisma)
@@ -77,8 +77,8 @@ class Guerrero{
 }
 
 class Bardo{
-    constructor(nombre,fuerza,inteligencia,carisma,destreza,constitucion){
-    this.nombre=nombre
+    constructor(fuerza,inteligencia,carisma,destreza,constitucion){
+   this.name='Bardo'
     this.fuerza=parseInt(fuerza)
     this.inteligencia=parseInt(inteligencia)
     this.carisma=parseInt(carisma)
@@ -146,7 +146,7 @@ class Esqueleto{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(40*(constitucion/5))
+    this.vida=parseInt(20*(constitucion*5))
     this.portrait="url(/Gameproject/static/assets/skeletal_enemy.jpg)"
     this.habilidades =[ {
         Nombre:"Carga",
@@ -180,17 +180,15 @@ class ArañaG{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
+    this.vida=parseInt(20*(constitucion*2))
     this.portrait="url(/Gameproject/static/assets/spider.jpg)"
-    let habilidades =[ {
+    this.habilidades =[ {
         Nombre:"Mordida",
         Danio:15}
     ,{Nombre:"Veneno",
     Danio:10}]
    
-    this.vida=function(){
-        let vidatotal=50
-        return vidatotal
-    } 
+   
 
     this.danioHabilidad= function(number){
         
@@ -213,17 +211,14 @@ class Hlobo{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
+    this.vida=parseInt(50*(constitucion/5))
     this.portrait="url(/Gameproject/static/assets/werewolf.jpg)"
-    let habilidades =[ {
+    this.habilidades =[ {
         Nombre:"Mordida",
         Danio:15}
     ,{Nombre:"Ataque bestial",
     Danio:30}]
-
-    this.vida=function(){
-        let vidatotal=60
-        return vidatotal
-    } 
+  
    
     this.danioHabilidad= function(number){
         
@@ -253,7 +248,7 @@ const GeneradorEnemigo = () =>{
     enemigos=[]
     EsqueletoVar=new Esqueleto(valorAleatorio(1,4),valorAleatorio(1,2),valorAleatorio(1,3))
     ArañaVar=new ArañaG(valorAleatorio(1,3),valorAleatorio(1,5),valorAleatorio(1,2))
-    HloboVar=new Hlobo(valorAleatorio(1,5),valorAleatorio(1,2),valorAleatorio(1,4))
+    HloboVar=new Hlobo(valorAleatorio(5,10),valorAleatorio(3,8),valorAleatorio(5,25))
     enemigos.push(EsqueletoVar,ArañaVar,HloboVar)
     // const resultado=enemigos.find(monster=>monster.nombre==='Esqueleto') //<<-- uso de la funcion find devuelve un solo numero
     // const resultado=enemigos.filter(monster=>monster.destreza>1) //<<-- uso de la funcion filter devuelve todos los objetos que tengan destreza mayor que 1
@@ -342,9 +337,5 @@ if (vidaEnem <=0){
         return
     }
 }
-
-
-
-GeneradorEnemigo()
 
 

@@ -10,6 +10,7 @@ let eleccion=''
 let contador=1
 let nombre=document.getElementById('nombreform').value   
 let comprobador= 0
+let portrait=''
 const botonMago= document.getElementById("smago")
 const  botonGuerrero=document.getElementById("sguerrero")
 const botonBardo=document.getElementById("sbardo")
@@ -21,8 +22,6 @@ const Magopop=document.createElement('div')
 const Guerreropop=document.createElement('div')
 const Bardopop=document.createElement('div')
 const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
-console.log(encontre)
-
 
 
 
@@ -76,6 +75,7 @@ logo.addEventListener('click',()=>{
        
         if (nombre.length>4 && isNaN(nombre)){
             okbutton.className="animate__animated animate__fadeOut"
+            encontre.nombre=nombre
             return nombre
         }else{
         
@@ -168,20 +168,31 @@ if (encontre.clase==''){
     botonMago.addEventListener('click',()=>{          
        
         
-        clase=new Mago(nombre,valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
+        clase=new Mago(valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
         eleccion="mago"
+        if (botonMago.style.backgroundImage===''){
+            botonMago.style.backgroundImage= "url('/Gameproject/static/assets/wizard2.jpg')"
+           
+        }       
+        encontre.retrato=botonMago.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
         mostrarHabilidades()   
         GenerarClassdesc()
+       
     
     })
     
     botonGuerrero.addEventListener('click',()=>{
        
         
-        clase=new Guerrero(nombre,valorAleatorio(5,10),valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
+        clase=new Guerrero(valorAleatorio(5,10),valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
         eleccion="guerrero"
+        if (botonGuerrero.style.backgroundImage===''){
+            botonGuerrero.style.backgroundImage= "url('/Gameproject/static/assets/warrior3.jpg')"
+                     
+        }   
+        encontre.retrato=botonGuerrero.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
         mostrarHabilidades()
@@ -192,8 +203,13 @@ if (encontre.clase==''){
     botonBardo.addEventListener('click',()=>{
             
        
-        clase=new Bardo(nombre,valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(5,10))
+        clase=new Bardo(valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(5,10))
         eleccion="bardo"
+        if (botonBardo.style.backgroundImage===''){
+            botonBardo.style.backgroundImage= "url('/Gameproject/static/assets/bard3.jpg')"
+                    
+        }   
+        portrait=botonBardo.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
         mostrarHabilidades()
@@ -206,10 +222,8 @@ finSeleccion.addEventListener('mouseover',()=>{
     finSeleccion.style.cursor='pointer'
 })
 
-finSeleccion.addEventListener('click',()=>{
+finSeleccion.addEventListener('click',()=>{    
     
-    switch (contador) {
-        case 1: 
         if (eleccion != '' && nombre!=''){
             Swal.fire({
                 title: `${clase.nombre} deseas guardar estos valores?`,
@@ -221,12 +235,13 @@ finSeleccion.addEventListener('click',()=>{
                 if (result.isConfirmed) {
                   Swal.fire('Saved!', '', 'success')
                   console.log('entro')
-                  Inicio()
+                  window.location ="/Gameproject/template/introduccion.html"
                 console.log(encontre)               
                 for (item in arr_usuarios){
                     if (encontre.usuario === item.usuario){
                         item.clase=encontre.clase
                         item.eleccion=encontre.eleccion                        
+                        item.nombre=encontre.nombre
                     }
                 }
                 arr_usuarios_json=JSON.stringify(arr_usuarios)
@@ -241,8 +256,7 @@ finSeleccion.addEventListener('click',()=>{
                   })
                   
                 }
-              })
-                      
+              })                     
                   
                 } else{
                     Swal.fire({
@@ -250,22 +264,8 @@ finSeleccion.addEventListener('click',()=>{
                     title: 'Error!',
                     text: 'Por favor selecciona un retrato y elige un nombre!'                    
                   })      
-            break;}
-        case 2:
-            Iniciox2()
-            contador++
-            break;
-        case 3:
-            Acto1()
-            contador++
-            break;
-        default:
-            break;
-    }    
-     
-
-}
-)
+          
+                }})
 
 Yaexiste()
 

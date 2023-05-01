@@ -74,7 +74,7 @@ function save_usuario(){
             text: 'El nombre de usuario ya existe intenta con otro',
         })
     } else if (give_usuario && give_password && give_usuario.length > 3 && give_password.length>5){
-        usuario_com={"usuario":give_usuario,"password":give_password,'clase':'','eleccion':''}    
+        usuario_com={"usuario":give_usuario,"password":give_password,"nombre":'',"clase":'',"eleccion":'',"retrato":''}    
         arr_usuarios.push(usuario_com)
         arr_usuarios_json=JSON.stringify(arr_usuarios)
         localStorage.setItem("usuarios",arr_usuarios_json)

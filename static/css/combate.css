@@ -15,6 +15,36 @@ background-repeat: no-repeat;
 position: absolute;
 }
 
+#logo{
+    position: absolute;
+    left:120%;
+    top: 0.2%;
+    width: 100px;
+    height:100px;
+}
+
+#inicio{
+    background-image: url(/Gameproject/static/assets/wooden_sign.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    padding-left: 45px;
+    padding-top:22px ;
+    font-family: 'Literata', serif;
+    font-size: 45px;
+    top: 0%;
+    text-decoration:none;
+    color: white;
+}
+#inicio a:link, a:visited {
+    color:white;
+    text-decoration:none;
+    cursor: auto;
+}
+
+
 #combat-place{
     background-image: url(/Gameproject/static/assets/white\ papyrus.jpg);
     background-size:cover;
@@ -28,7 +58,7 @@ position: absolute;
 }
 
 #Player{
-    background-image: url(/Gameproject/static/assets/skeletal_enemy.jpg);
+    
     background-size:cover;    
    display: block;
     width: 400px;
@@ -39,7 +69,7 @@ position: absolute;
     padding-top:1%;   
 }
 #Enemy{
-    background-image: url(/Gameproject/static/assets/skeletal_enemy.jpg);
+   
     background-size:cover;
     background-position: 20%;    
    display: block;

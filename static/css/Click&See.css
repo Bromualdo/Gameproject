@@ -265,7 +265,7 @@ animation: fadeIn 1s;
     background-size: contain; 
     background-repeat: no-repeat;    
     width: 320px;
-    height: 300px;
+    height: 200px;
     opacity: 0;
     
     margin-top: -2%;
@@ -285,11 +285,11 @@ animation: fadeIn 1s;
     height: 100px;
     background-size: contain; 
     background-repeat: no-repeat;
-    left:75%;
-    top:88%;
-    padding-left: 5.2%;
+    left:48%;
+    top:95%;
+    padding-left: 3.3%;
     padding-top: 0.5%;
-    position: absolute;   
+    position: fixed;   
     
 }
 
