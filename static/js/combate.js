@@ -9,6 +9,7 @@ const onom_enem=document.createElement('div')
 const onom_player=document.createElement('div') 
 
 
+let comprobeta= 0
 let acu =0
 let hab_cont=0
 let enemyhab_cont=0
@@ -23,14 +24,14 @@ com_btn.addEventListener('mouseover',()=>{
 com_btn.addEventListener('click',()=>{
     acu++
     cont_turnos.innerText=`Tu turno!`
-    if(comprobador==1){
+    if(comprobeta==1){
         document.querySelectorAll('hab-group').remove()        
-        comprobador--
+        comprobeta--
     }
     
     hab_disp()
     hab_enem_disp()
-    comprobador++
+    comprobeta++
     document.getElementById("comenzar").className="animate__animated animate__fadeOut"
     
     

@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0; 
+    font-family: 'Righteous', cursive;
+}
+
+body {
+    background-image: url(/Gameproject/static/assets/city.jpg);
+    background-size: cover;
+    background-position:100% 90%;   
+    background-repeat: no-repeat;
+}
+
+#logo{
+    position: absolute;
+    left:49%;
+    top: 0.2%;
+    width: 100px;
+    height:100px;
+}
+
+#inicio{
+    background-image: url(/Gameproject/static/assets/wooden_sign.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    padding-left: 45px;
+    padding-top:22px ;
+    font-family: 'Literata', serif;
+    font-size: 45px;
+    top: 0%;
+    text-decoration:none;
+    color: white;
+}
+#inicio a:link, a:visited {
+    color:white;
+    text-decoration:none;
+    cursor: auto;
+}
+
+
+#papiro-relator{
+    background-image: url(/Gameproject/static/assets/Introduccion.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+   
+    border-radius: 20px;
+    left: 30%;
+    top:25%;
+    width:800px;
+    height: 600px;
+    border:5px groove rgb(190, 188, 188);
+    
+    
+}
+#typewrite {
+    font-family: 'League Gothic', sans-serif;
+    padding: 1% 1% 1% 2%;
+    font-size: 30px;
+    animation: typewriter 3s steps(40) forwards;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+#habitantes1{
+    background-image: url(/Gameproject/static/assets/sick5.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    list-style: none;
+    width: 400px;
+    height: 595px;
+    margin-left: 7%;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 12.5%;
+    
+}
+
+#habitantes2{
+    background-image: url(/Gameproject/static/assets/sick6.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    list-style: none;
+    width: 400px;
+    height: 595px;
+    margin-left: 75%;
+    display: flex;
+    border-radius: 5px;
+    padding-top: 2%;   
+    margin-top: -31%;
+   
+}
+
+#btncontinuar{
+    background-image: url(/Gameproject/static/assets/botoncontinue.png);  
+    color: white;
+    width: 200px;
+    height: 100px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    left:38%;
+    top:88%;
+    padding-left: 7.7%;
+    padding-top: 1.2%;
+    position: absolute;   
+}

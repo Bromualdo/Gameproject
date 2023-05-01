@@ -16,7 +16,7 @@ position: absolute;
 }
 
 #combat-place{
-    background-image: url(/Gameproject/images/white\ papyrus.jpg);
+    background-image: url(/Gameproject/static/assets/white\ papyrus.jpg);
     background-size:cover;
     display: absolute;
     border-radius: 5%;
@@ -28,7 +28,7 @@ position: absolute;
 }
 
 #Player{
-    background-image: url(/Gameproject/static/assets/a\ wizard.jpg);
+    background-image: url(/Gameproject/static/assets/skeletal_enemy.jpg);
     background-size:cover;    
    display: block;
     width: 400px;
