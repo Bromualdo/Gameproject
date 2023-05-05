@@ -106,9 +106,9 @@ btn_continuar.addEventListener('click',eventos)
 function eventos(){
     switch (acc) {
         case 0:    
-                     
-              apdesboton(500,'none')                           
               btn_continuar.className='animate__animated animate__fadeOut' 
+              apdesboton(500,'none')                           
+              
               
               diapositivas(6000,'streets.jpg','4s','fadeInRight',izquierdo,'fadeOut','5s',0,3500)                
               diapositivas(10000,'streets2.jpg','4s','fadeInLeft',derecho,'fadeOut','5s',0,3500)  

@@ -63,25 +63,7 @@ logo.addEventListener('click',()=>{
 
 
     
-        const aparecenombre=document.getElementById("generarnombre")
-        aparecenombre.className="animate__animated animate__fadeInUp"
-        aparecenombre.style.opacity=1
-        const okbutton=document.getElementById("nameconfirm")
-        okbutton.addEventListener('mouseover',()=>{
-            okbutton.style.cursor='pointer'
-        })
-        okbutton.addEventListener('click',()=>{
-        nombre=document.getElementById('nombreform').value        
        
-        if (nombre.length>4 && isNaN(nombre)){
-            okbutton.className="animate__animated animate__fadeOut"
-            encontre.nombre=nombre
-            return nombre
-        }else{
-        
-        Swal.fire("Has ingresado un nombre que es muy corto o son solo numeros prueba con uno mas largo")
-  
-        }})
        
         
 
@@ -224,7 +206,7 @@ finSeleccion.addEventListener('mouseover',()=>{
 
 finSeleccion.addEventListener('click',()=>{    
     
-        if (eleccion != '' && nombre!=''){
+        if (eleccion != ''){
             Swal.fire({
                 title: `${clase.nombre} deseas guardar estos valores?`,
                 showDenyButton: true,                
@@ -252,7 +234,7 @@ finSeleccion.addEventListener('click',()=>{
                   
                   Swal.fire({
                     icon: 'error',                    
-                    text: 'Por favor vuelve a  seleccionar un retrato y elige un nombre!'                    
+                    text: 'Por favor vuelve a  seleccionar un retrato!'                    
                   })
                   
                 }
@@ -262,7 +244,7 @@ finSeleccion.addEventListener('click',()=>{
                     Swal.fire({
                     icon: 'error',
                     title: 'Error!',
-                    text: 'Por favor selecciona un retrato y elige un nombre!'                    
+                    text: 'Por favor selecciona un retrato!'                    
                   })      
           
                 }})
