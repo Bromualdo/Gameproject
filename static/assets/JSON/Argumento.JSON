@@ -1,0 +1,21 @@
+[
+	{ "id":1,
+	"argumento":"Eres un aventurero solitario. Un día, recibes una carta de un comerciante de la ciudad de Tharion que te solicita tu ayuda para recuperar un objeto mágico robado de su tienda. El objeto es un medallón de oro antiguo y poderoso que puede conceder deseos a quien lo posea. El medallón fue robado por un grupo de ladrones que lo llevaron a una ciudad vecina llamada Xyron.Decides aceptar el trabajo y te diriges a Xyron, pero descubres que la ciudad está en cuarentena debido a una misteriosa plaga que ha matado a muchos de sus habitantes. Al llegar a las puertas de la ciudad, te encontraste con un par de guardias que te impidieron la entrada, ya que solo permitían el acceso a los médicos y curanderos que venían a tratar a los enfermos.Fue entonces cuando tuviste la idea de hacerles creer que eras un curandero. Reuniste algunas hierbas y ungüentos que encontraste por el camino, y con ellos intentaste convencer a los guardias de que eras un médico en busca de trabajo. Aunque al principio los guardias parecían escépticos, finalmente lograste convencerlos y te permitieron entrar en la ciudad."},
+	{
+"id":2,
+"argumento":"Al adentrarte en las calles de Xyron, te diste cuenta de que la situación era peor de lo que pensabas. Había cadáveres en las calles, enfermos que pedían ayuda, y el miedo y la desesperación se palpaban en el ambiente. Decidiste comenzar tu búsqueda del medallón de oro robado, siguiendo las pistas que habías obtenido antes de llegar a la ciudad.Mientras caminabas por las calles, te encontraste con un hombre que te detuvo y te pidió ayuda. Su hija estaba enferma y necesitaba un remedio que solo se encontraba en el bosque cercano. A pesar de tus objetivos principales, no pudiste ignorar su sufrimiento y te ofreciste a ayudarlo.Juntos, salieron de la ciudad y te guió hasta el bosque. Mientras caminaban, el hombre comenzó a contarte sobre la historia de la ciudad, sobre cómo había sido próspera en el pasado, pero que todo cambió cuando apareció la plaga.Finalmente, llegaron a la ubicación donde se encontraba la hierba necesaria para la medicina."
+},
+{
+"id":3,
+"argumento":"Mientras caminabas con el hombre hacia la ubicación donde se encontraba la hierba, comenzaste a notar algunos signos extraños en el bosque. Huesos rotos, armaduras oxidadas y un aura siniestra eran algunos de ellos. Sin embargo, decidiste continuar y ayudar al hombre a encontrar la hierba necesaria para su hija.Finalmente, llegaron al lugar donde crecía la hierba, pero también se encontraron con un guerrero esqueleto. El esqueleto estaba parado en silencio en el centro del campo, sosteniendo su espada y escudo como si estuviera esperando a alguien. El hombre que te acompañaba comenzó a temblar de miedo y te pidió que corrieras, pero tu valentía te impidió huir."
+},
+{
+"id":4,
+"argumento":"Mientras caminabas con el hombre hacia la ubicación donde se encontraba la hierba, comenzaste a notar algunos signos extraños en el bosque. Telarañas gigantes, troncos arrancados y una quietud perturbadora eran algunos de ellos. Sin embargo, decidiste continuar y ayudar al hombre a encontrar la hierba necesaria para su hija.Finalmente, llegaron al lugar donde crecía la hierba, pero también se encontraron con una araña gigante. La criatura estaba tejiendo una telaraña en un árbol cercano, pero rápidamente notó tu presencia y se lanzó sobre ustedes. El hombre que te acompañaba comenzó a temblar de miedo y te pidió que corrieras, pero tu valentía te impidió huir."
+},
+{
+"id":5,
+"argumento":"Mientras caminabas con el hombre hacia la ubicación donde se encontraba la hierba, comenzaste a notar algunos signos extraños en el bosque. Ramas rotas, huellas grandes y profundos gruñidos eran algunos de ellos. Sin embargo, decidiste continuar y ayudar al hombre a encontrar la hierba necesaria para su hija.Finalmente, llegaron al lugar donde crecía la hierba, pero también se encontraron con un hombre lobo. La criatura estaba sentada sobre un tronco, mirándolos fijamente con sus ojos brillantes y afilados dientes. El hombre que te acompañaba comenzó a temblar de miedo y te pidió que corrieras, pero tu valentía te impidió huir."
+
+}
+]

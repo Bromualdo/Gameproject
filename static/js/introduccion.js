@@ -1,80 +1,11 @@
 
-
-let text = document.querySelector("#typewrite").textContent;
-const el = document.querySelector("#typewrite");
-let enemigo=GeneradorEnemigo(valorAleatorio(0,2))
-console.log(enemigo)
-enemigo_json=JSON.stringify(enemigo)
-localStorage.setItem("enemigo",enemigo_json)
-function plotTwist(val1){
-  switch (val1.nombre) {
-    case 'Esqueleto':
-            text='Mientras caminabas con el hombre hacia la ubicación donde se encontraba la hierba, comenzaste a notar algunos signos extraños en el bosque. Huesos rotos, armaduras oxidadas y un aura siniestra eran algunos de ellos. Sin embargo, decidiste continuar y ayudar al hombre a encontrar la hierba necesaria para su hija.Finalmente, llegaron al lugar donde crecía la hierba, pero también se encontraron con un guerrero esqueleto. El esqueleto estaba parado en silencio en el centro del campo, sosteniendo su espada y escudo como si estuviera esperando a alguien. El hombre que te acompañaba comenzó a temblar de miedo y te pidió que corrieras, pero tu valentía te impidió huir.'
-            
-      break;  
-     case 'Araña Grande':
-            text='Mientras caminabas con el hombre hacia la ubicación donde se encontraba la hierba, comenzaste a notar algunos signos extraños en el bosque. Telarañas gigantes, troncos arrancados y una quietud perturbadora eran algunos de ellos. Sin embargo, decidiste continuar y ayudar al hombre a encontrar la hierba necesaria para su hija.'
-      break;
-      case 'Hombre Lobo':
-        text='Mientras caminabas con el hombre hacia la ubicación donde se encontraba la hierba, comenzaste a notar algunos signos extraños en el bosque. Ramas rotas, huellas grandes y profundos gruñidos eran algunos de ellos. Sin embargo, decidiste continuar y ayudar al hombre a encontrar la hierba necesaria para su hija.Finalmente, llegaron al lugar donde crecía la hierba, pero también se encontraron con un hombre lobo. La criatura estaba sentada sobre un tronco, mirándolos fijamente con sus ojos brillantes y afilados dientes. El hombre que te acompañaba comenzó a temblar de miedo y te pidió que corrieras, pero tu valentía te impidió huir.'
-      break;
-      }
+let derecho = document.getElementById('habitantes2')
+let izquierdo = document.getElementById('habitantes1')
+let text = document.querySelector("#typewrite").textContent
+const el = document.querySelector("#typewrite")
 
 
-}
 
-console.log(enemigo.nombre)
-
-el.innerHTML = "";
-
-let i = 0;
-let acc = 0; 
-
-function addChar() {
-  el.innerHTML += text.charAt(i);
-  i++;
-
-  if (i <= text.length) {
-    setTimeout(addChar,50); //Velocidad del typewriter
-  }
-}
-
-addChar();
-
-const btn_continuar=document.getElementById("btncontinuar")
-
-btn_continuar.addEventListener('mouseover',()=>{
-    btn_continuar.style.cursor='pointer'
-})
-
-btn_continuar.addEventListener('click',eventos)
-
-function eventos(){
-    switch (acc) {
-        case 0:            
-            el.innerHTML = ""
-            i = 0;
-            text="Al adentrarte en las calles de Xyron, te diste cuenta de que la situación era peor de lo que pensabas. Había cadáveres en las calles, enfermos que pedían ayuda, y el miedo y la desesperación se palpaban en el ambiente. Decidiste comenzar tu búsqueda del medallón de oro robado, siguiendo las pistas que habías obtenido antes de llegar a la ciudad.Mientras caminabas por las calles, te encontraste con un hombre que te detuvo y te pidió ayuda. Su hija estaba enferma y necesitaba un remedio que solo se encontraba en el bosque cercano. A pesar de tus objetivos principales, no pudiste ignorar su sufrimiento y te ofreciste a ayudarlo.Juntos, salieron de la ciudad y te guió hasta el bosque. Mientras caminaban, el hombre comenzó a contarte sobre la historia de la ciudad, sobre cómo había sido próspera en el pasado, pero que todo cambió cuando apareció la plaga.Finalmente, llegaron a la ubicación donde se encontraba la hierba necesaria para la medicina."
-           
-            addChar();
-            acc++;
-            break;
-    
-        case 1:
-            el.innerHTML = ""
-            i = 0;
-            plotTwist(enemigo)
-            addChar()
-            acc++
-            break;
-        
-        case 2:
-          window.location ="/Gameproject/template/combate.html"            
-          
-          break;
-          
-    }
-}
 
 const logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
@@ -110,3 +41,161 @@ logo.addEventListener('click',()=>{
       })
 
 })
+
+let enemigo=GeneradorEnemigo(valorAleatorio(0,2))
+console.log(enemigo)
+enemigo_json=JSON.stringify(enemigo)
+localStorage.setItem("enemigo",enemigo_json)
+function plotTwist(val1){
+  switch (val1.nombre) {
+    case 'Esqueleto':
+            fetch('/Gameproject/static/assets/JSON/Argumento.json')
+            .then((response) => response.json())
+            .then((data) => {
+                text=data[2].argumento               
+            })
+            
+      break;  
+     case 'Araña Grande':
+            fetch('/Gameproject/static/assets/JSON/Argumento.json')
+            .then((response) => response.json())
+            .then((data) => {
+            text=data[3].argumento               
+          })
+      break;
+      case 'Hombre Lobo':
+            fetch('/Gameproject/static/assets/JSON/Argumento.json')
+            .then((response) => response.json())
+            .then((data) => {
+              text=data[4].argumento               
+            })
+      break;
+      }
+
+
+}
+
+
+
+
+el.innerHTML = "";
+
+let i = 0;
+let acc = 0; 
+
+function addChar() {
+  el.innerHTML += text.charAt(i);
+  i++;
+
+  if (i <= text.length) {
+    setTimeout(addChar,50); //Velocidad del typewriter
+  }
+  
+}
+addChar();
+
+const btn_continuar=document.getElementById("btncontinuar")
+
+btn_continuar.addEventListener('mouseover',()=>{
+    btn_continuar.style.cursor='pointer'
+
+})
+
+btn_continuar.addEventListener('click',eventos)
+
+function eventos(){
+    switch (acc) {
+        case 0:    
+                     
+              apdesboton(500,'none')                           
+              btn_continuar.className='animate__animated animate__fadeOut' 
+              
+              diapositivas(6000,'streets.jpg','4s','fadeInRight',izquierdo,'fadeOut','5s',0,3500)                
+              diapositivas(10000,'streets2.jpg','4s','fadeInLeft',derecho,'fadeOut','5s',0,3500)  
+              diapositivas(15500,'sick.jpg','0.5s','fadeInRight',izquierdo,'fadeOut','0.5s',0,500)                
+              diapositivas(17500,'sick2.jpg','0.5s','fadeInLeft',derecho,'fadeOut','0.5s',0,500)  
+              diapositivas(19500,'sick3.jpg','0.5s','fadeInRight',izquierdo,'fadeOut','0.5s',0,500)                
+              diapositivas(21500,'sick4.jpg','0.5s','fadeInLeft',derecho,'fadeOut','0.5s',0,500)  
+              diapositivas(23500,'sick5.jpg','0.5s','fadeInRight',izquierdo,'bounceIn','1s',1,500)                
+              diapositivas(25500,'sick6.jpg','0.5s','fadeInLeft',derecho,'bounceIn','1s',1,500)             
+
+             
+
+              el.innerHTML = ""
+              i = -1;
+              fetch('/Gameproject/static/assets/JSON/Argumento.json')
+              .then((response) => response.json())
+              .then((data) => {
+              text=data[1].argumento   
+              
+              
+              apdesboton(55000,'block')      
+              btn_continuar.className=` animate__animated animate__fadeIn`     
+            })
+
+            addChar();
+            acc++;
+            break;
+    
+        case 1:
+            el.innerHTML = ""
+            i = -1;
+            plotTwist(enemigo)
+            addChar()
+            acc++
+            break;
+        
+        case 2:
+          window.location ="/Gameproject/template/combate.html"            
+          
+          break;
+          
+    }
+}
+
+
+diapositivas(2000,'letter.jpg','5s','fadeInRight',izquierdo,'fadeOut','5s',0,5000)
+
+diapositivas(20500,'leaving_home.jpg','5s','fadeInLeft',derecho,'fadeOut','4s',0,4000)
+
+diapositivas(28500,'plaga2.jpg','5s','fadeInRight',izquierdo,'fadeOut','5s',0,5000)  
+
+diapositivas(40500,'plaga.jpg','5s','fadeInLeft',derecho,'fadeOut','4s',0,4000)
+
+apdesboton(61000,'block')
+
+btn_continuar.className=` animate__animated animate__fadeIn`
+
+function apdesboton(num,display)
+{
+  setTimeout(() => {
+    btn_continuar.style.display=`${display}`    
+  }, num);
+
+}
+
+function diapositivas(aparece,var1,tiempo,animacion,lado,animacion2,tiempo2,opacidad,trigger)
+{
+  setTimeout(() => {
+    
+  
+  lado.style.backgroundImage=`url(/Gameproject/static/assets/${var1})` 
+
+
+
+  setTimeout(()=>{
+    lado.style.animation=`${animacion2}`
+    lado.style.animationDuration=`${tiempo2}`
+    lado.style.opacity=opacidad
+
+  },trigger)
+
+  lado.style.animation=`${animacion}`
+  lado.style.animationDuration=`${tiempo}`
+}, aparece);
+
+}
+
+
+
+
