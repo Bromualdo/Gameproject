@@ -14,6 +14,9 @@ const continue_user=arr_usuarios.find(encontrado=>encontrado.usuario==continue_s
 console.log(continue_user.clase)
 
 
+
+
+
 logo=document.getElementById('logo')
 logo.addEventListener('mouseover',()=>{
     logo.style.cursor='pointer'
@@ -51,7 +54,7 @@ logo.addEventListener('click',()=>{
 
 function quien_es(element){
     eleccion=''
-switch (element.nombre) { 
+switch (element.nombre) {
    
     case 'Mago': 
               
@@ -132,11 +135,6 @@ player.habilidades.forEach(habilidad=>{
 })
 
 
-    
-const fire1=document.getElementById('hab1')
-fire1.addEventListener('mouseover',()=>{
-    fire1.style.cursor='pointer'
-})
 
 function usehab(number){    
     
@@ -151,18 +149,17 @@ function usehab(number){
     setTimeout(() =>{
     cont_turnos.innerText=`Turno enemigo`  
     },400)
-    setTimeout(() =>{         
-        onom.className="animate__animated animate__zoomOut"
-      }, 2000);
-    
-    setTimeout(() =>{         
-        onom.remove()  
-      }, 3000);
+  
     setTimeout(() =>{ 
         turno_enemigo()  
       }, 1200);
    }
 
+    
+const fire1=document.getElementById('hab1')
+fire1.addEventListener('mouseover',()=>{
+    fire1.style.cursor='pointer'
+})
 fire1.addEventListener('click',()=>{
     usehab(0)
     })  
@@ -187,7 +184,6 @@ fire3.addEventListener('click',()=>{
 })
 }
 
-console.log(enemyofplayer)
 
 const hab_enem_disp=()=>{    
     enemyofplayer.habilidades.forEach(habilidad=>{
@@ -217,7 +213,8 @@ function GiveDmg (param1,who,change){
             width:400,
             html:'<img src="/Gameproject/static/assets/baby.gif" id="loser"><br>'+
             'Has sido derrotado!! ,haz clic en inicio para volver a empezar',
-            confirmButtonText:'Demonios!'
+            confirmButtonText:'Presiona f5 para volver a pelear!'
+            
     })
     }
     if (enemyofplayer.vida<=0 ){
@@ -234,6 +231,10 @@ function GiveDmg (param1,who,change){
 
 document.getElementById('Enemy').style.backgroundImage=`${enemyofplayer.portrait}`
 document.getElementById('Player').style.backgroundImage=`${continue_user.retrato}`
+relocalizacion()
+
+console.log(continue_user.retrato.slice(32))
+
 
 const turno_enemigo = ()=>{
 
@@ -254,7 +255,7 @@ const turno_enemigo = ()=>{
         cont_turnos.innerText=`Tu turno!`
         en_as.style.color='white'
         
-      }, 2500)
+      }, 1500)
     }
 }
 

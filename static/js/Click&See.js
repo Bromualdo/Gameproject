@@ -15,6 +15,18 @@ const Guerreropop=document.createElement('div')
 const Bardopop=document.createElement('div')
 const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
 
+botonMago.addEventListener('mouseover',()=>{
+    botonMagoTrans.id="MagoTrans"    
+    Magopop.id="cartelmago"
+    botonMagoTrans.className="animate__animated animate__fadeIn"
+    Magopop.className="animate__animated animate__fadeInLeft"
+    Magopop.innerHTML="Mago"
+    botonMago.append(botonMagoTrans,Magopop)
+    botonMago.style.cursor='pointer'
+   
+    
+})
+
 botonMago.addEventListener('mouseleave',()=>{
     botonMagoTrans.className="animate__animated animate__fadeOut"
     Magopop.className="animate__animated animate__fadeOutLeft"
@@ -248,14 +260,3 @@ finSeleccion.addEventListener('click',()=>{
 
 
 
-botonMago.addEventListener('mouseover',()=>{
-    botonMagoTrans.id="MagoTrans"    
-    Magopop.id="cartelmago"
-    botonMagoTrans.className="animate__animated animate__fadeIn"
-    Magopop.className="animate__animated animate__fadeInLeft"
-    Magopop.innerHTML="Mago"
-    botonMago.append(botonMagoTrans,Magopop)
-    botonMago.style.cursor='pointer'
-   
-    
-})

@@ -120,7 +120,7 @@ class Esqueleto{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(20*(constitucion*5))
+    this.vida=parseInt(20*(constitucion/4))
     this.portrait="url(/Gameproject/static/assets/skeletal_enemy.jpg)"
     this.habilidades =[ {
         Nombre:"Carga",
@@ -154,7 +154,7 @@ class ArañaG{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(20*(constitucion*2))
+    this.vida=parseInt(20*(constitucion/4))
     this.portrait="url(/Gameproject/static/assets/spider.jpg)"
     this.habilidades =[{
         Nombre:"Mordida",
@@ -190,13 +190,21 @@ class Hlobo{
     this.fuerza=parseInt(fuerza)
     this.destreza=parseInt(destreza)
     this.constitucion=parseInt(constitucion)
-    this.vida=parseInt(50*(constitucion/5))
+    this.vida=parseInt(50*(constitucion/7))
     this.portrait="url(/Gameproject/static/assets/werewolf.jpg)"
     this.habilidades =[ {
         Nombre:"Mordida",
-        Danio:15}
-    ,{Nombre:"Ataque bestial",
-    Danio:30}]
+        Danio:15
+    }
+    ,{
+        Nombre:"Ataque bestial",
+        Danio:30
+},
+    {
+        Nombre:"Arañazo",
+        Danio:20
+    }
+]
   
    
     this.danioHabilidad= function(number){
@@ -245,76 +253,29 @@ const GeneradorEnemigo = () =>{
     return enemigos[valorAleatorio(0,2)]
 }
 
-
-
-
-
-// const Hit = (numero1,numero2) =>{
-//     let acerto =false
-//     let variable=valorAleatorio(0,18)
-//     resultado=variable+numero1-numero2 
-//     if (resultado >7){        
-//         return acerto=true 
-//     }
-//     else{
-        
-//         return acerto=false
-//     }  
-   
-    
-// }
-
-// const Combate =(var1,var2) =>{
-   
-//     vidaPlayer=var1.vida
-//     vidaEnem=var2.vida()
-//     console.log(vidaPlayer,vidaEnem,enemigo.nombre)
-//     i=1
-
-//     while (vidaPlayer>0 && vidaEnem > 0) {
-//         alert("Round "+i)
-//         variableUsada=valorAleatorio(0,2)
-//         usoHabilidad=var1.habilidadUsada(variableUsada)
-//         habilidadDmg=var1.danioHabilidad(variableUsada)
-//         variableUsadaEnem=valorAleatorio(0,1)
-//         usoHabilidadEnem=var2.habilidadUsada(variableUsadaEnem)
-//         habilidadDmgEnem=var2.danioHabilidad(variableUsadaEnem)
-        
-          
-//             alert("Tu Turno")
-//             if (Hit(clase.destreza,enemigo.destreza)==true){
-//                 if (variableUsada <3){
-//                     alert('Aciertas!\nUtilizas '+usoHabilidad+'!!\nTu daño es de: '+habilidadDmg)
-//                     vidaEnem-=habilidadDmg
-//                     alert('su vida es de '+vidaEnem)    
-//                 }
-//                 }
-//                 else {
-//                     alert("Tu enemigo esquiva tu ataque!!")
-//                 }
-//         if (vidaEnem >0){
-//             alert("Turno Enemigo")
-//             if (Hit(enemigo.destreza,clase.destreza)==true){
-//             if (variableUsadaEnem <2){
-//                     alert(var2.nombre+ ' te Acierta!\nUso la habilidad '+usoHabilidadEnem+'!!\nSu daño es de: '+habilidadDmgEnem)
-//                     vidaPlayer-=habilidadDmgEnem
-//                     alert('tu vida es de '+vidaPlayer)
-//             } 
-//         }
-//             else {
-//                 alert("Esquivas el ataque de tu enemigo!!")
-//             }
-        
-//         }
-//         i++  
-//     }
-// if (vidaEnem <=0){
-//     alert("Derrotaste a tu enemigo!, la aventura continua")
-//     var1.vida=vidaPlayer 
-// }   else{
-//     alert("Las fuerzas del mal te han superado ! intentalo otra vez!")
-//         return
-//     }
-// }
-
-
+function relocalizacion() {
+    const reloc= continue_user.retrato.slice(32)
+ 
+    switch (reloc) {
+     case 'wizard2.jpg")':
+         document.getElementById('Player').style.backgroundPosition='right center'
+         break;
+     case 'warrior3.jpg")':
+         document.getElementById('Player').style.backgroundPosition='top'
+     break;
+     case 'bard3.jpg")':
+         document.getElementById('Player').style.backgroundPosition='bottom'
+     break;
+     default:
+     case 'fwizard.jpg")':
+         document.getElementById('Player').style.backgroundPosition='center'
+     break;    
+     case 'fwarrior.jpg")':
+         document.getElementById('Player').style.backgroundPosition='right bottom'
+     break;
+     case 'fbard.jpg")':
+         document.getElementById('Player').style.backgroundPosition='top left'
+     break;
+    }
+ }
+ 
