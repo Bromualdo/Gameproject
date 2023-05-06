@@ -199,6 +199,11 @@ if (encontre.clase==''){
     
 })
 }
+else{
+    window.location ="/Gameproject/template/introduccion.html"
+}
+
+
 const finSeleccion=document.querySelector(".gameFlow")
 finSeleccion.addEventListener('mouseover',()=>{
     finSeleccion.style.cursor='pointer'
@@ -249,7 +254,6 @@ finSeleccion.addEventListener('click',()=>{
           
                 }})
 
-Yaexiste()
 
 
 botonMago.addEventListener('mouseover',()=>{
