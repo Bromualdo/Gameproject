@@ -53,7 +53,7 @@ function quien_es(element){
     eleccion=''
 switch (element.nombre) { 
    
-    case 'Mago':   
+    case 'Mago': 
               
             eleccion= new Mago(element.fuerza,element.inteligencia,element.carisma,element.destreza,element.constitucion)
         break;
@@ -254,7 +254,7 @@ const turno_enemigo = ()=>{
         cont_turnos.innerText=`Tu turno!`
         en_as.style.color='white'
         
-      }, 1500)
+      }, 2500)
     }
 }
 

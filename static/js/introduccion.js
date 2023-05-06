@@ -174,12 +174,12 @@ function apdesboton(num,display)
 
 }
 
-function diapositivas(aparece,var1,tiempo,animacion,lado,animacion2,tiempo2,opacidad,trigger)
+function diapositivas(aparece,imagen,tiempo,animacion,lado,animacion2,tiempo2,opacidad,trigger)
 {
   setTimeout(() => {
     
   
-  lado.style.backgroundImage=`url(/Gameproject/static/assets/${var1})` 
+  lado.style.backgroundImage=`url(/Gameproject/static/assets/${imagen})` 
 
 
 

@@ -1,14 +1,6 @@
 let clase=''
-let confirmaPersonaje=false
-let iniciativaJugador=0
-let iniciativaEnemigo=0
-let golpeTuyo=0
-let golpeEnemigo=0
-let dañoTotalTuyo=0
-let dañoTotalEnemigo=0
 let eleccion=''
 let contador=1
-let nombre=document.getElementById('nombreform').value   
 let comprobador= 0
 let portrait=''
 const botonMago= document.getElementById("smago")
@@ -22,6 +14,39 @@ const Magopop=document.createElement('div')
 const Guerreropop=document.createElement('div')
 const Bardopop=document.createElement('div')
 const encontre=arr_usuarios.find(encontrado=>encontrado.usuario==sesion_activa)
+
+botonMago.addEventListener('mouseleave',()=>{
+    botonMagoTrans.className="animate__animated animate__fadeOut"
+    Magopop.className="animate__animated animate__fadeOutLeft"
+})
+botonGuerrero.addEventListener('mouseover',()=>{
+    botonGuerreroTrans.id="GuerreroTrans"   
+    Guerreropop.id="cartelguerrero"
+    botonGuerreroTrans.className="animate__animated animate__fadeIn"   
+    Guerreropop.className="animate__animated animate__fadeInLeft"
+    Guerreropop.innerHTML="Guerrero"
+    botonGuerrero.append(botonGuerreroTrans,Guerreropop)
+    botonGuerrero.style.cursor='pointer'
+})
+botonGuerrero.addEventListener('mouseleave',()=>{
+    botonGuerreroTrans.className="animate__animated animate__fadeOut"
+    Guerreropop.className="animate__animated animate__fadeOutLeft"
+})
+
+botonBardo.addEventListener('mouseenter',()=>{
+    botonBardoTrans.id="BardoTrans"
+    Bardopop.id="cartelbardo"
+    botonBardoTrans.className="animate__animated animate__fadeIn"   
+    Bardopop.className="animate__animated animate__fadeInLeft"
+    Bardopop.innerHTML="Bardo"
+    botonBardo.append(botonBardoTrans,Bardopop)
+    botonBardo.style.cursor='pointer'
+})
+botonBardo.addEventListener('mouseleave',()=>{
+    botonBardoTrans.className="animate__animated animate__fadeOut"
+    Bardopop.className="animate__animated animate__fadeOutLeft"
+})
+
 
 
 
@@ -58,47 +83,20 @@ logo.addEventListener('click',()=>{
         }
       })
 
-})
-
-
-
-    
+}) 
        
-       
-        
-
-
-
-
 const radios = document.querySelectorAll('input[type=radio][name="gener0"]');
     radios[0].addEventListener('click',()=>{      
+        posicionamientoImg(botonMago,botonMagoTrans,'wizard2','right center')
+        posicionamientoImg(botonGuerrero,botonGuerreroTrans,'warrior3','top')
+        posicionamientoImg(botonBardo,botonBardoTrans,'bard3','bottom')
         
-        botonMago.style.backgroundImage= "url('/Gameproject/static/assets/wizard2.jpg')"
-        botonMagoTrans.style.backgroundImage="url('/Gameproject/static/assets/wizard2sm.jpg')"
-        botonMago.style.backgroundPosition="right center"
-        botonMagoTrans.style.backgroundPosition="right center"
-        botonGuerrero.style.backgroundImage= "url('/Gameproject/static/assets/warrior3.jpg')"
-        botonGuerreroTrans.style.backgroundImage="url('/Gameproject/static/assets/warrior3sm.jpg')"
-        botonGuerrero.style.backgroundPosition="top"
-        botonGuerreroTrans.style.backgroundPosition="top"
-        botonBardo.style.backgroundImage= "url('/Gameproject/static/assets/bard3.jpg')"
-        botonBardoTrans.style.backgroundImage="url('/Gameproject/static/assets/bard3sm.jpg')"
-        botonBardo.style.backgroundPosition="bottom"
-        botonBardoTrans.style.backgroundPosition="bottom"
     })
-    radios[1].addEventListener('click',()=>{        
-        botonMago.style.backgroundImage= "url('/Gameproject/static/assets/fwizard.jpg')"         
-        botonMagoTrans.style.backgroundImage="url('/Gameproject/static/assets/fwizardsm.jpg')"  
-        botonMago.style.backgroundPosition="center"
-        botonMagoTrans.style.backgroundPosition="center"
-        botonGuerrero.style.backgroundImage= "url('/Gameproject/static/assets/fwarrior.jpg')"
-        botonGuerreroTrans.style.backgroundImage="url('/Gameproject/static/assets/fwarriorsm.jpg')"
-        botonGuerrero.style.backgroundPosition="right bottom"
-        botonGuerreroTrans.style.backgroundPosition="right bottom"
-        botonBardo.style.backgroundImage= "url(/Gameproject/static/assets/fbard.jpg)"
-        botonBardoTrans.style.backgroundImage= "url(/Gameproject/static/assets/fbardsm.jpg)"
-        botonBardo.style.backgroundPosition="top left"
-        botonBardoTrans.style.backgroundPosition="top left"
+    radios[1].addEventListener('click',()=>{    
+        posicionamientoImg(botonMago,botonMagoTrans,'fwizard','center')
+        posicionamientoImg(botonGuerrero,botonGuerreroTrans,'fwarrior','right bottom')
+        posicionamientoImg(botonBardo,botonBardoTrans,'fbard','top left')    
+    
     })
 
 const GenerarClassdesc=()=>{
@@ -108,27 +106,28 @@ const GenerarClassdesc=()=>{
                 document.getElementById("classDesc").className="animate__animated animate__fadeInDown"
                 break;
             case "guerrero":
-                document.getElementById("classDesc").style.left='72%'
+                document.getElementById("classDesc").style.left='78%'
                 document.getElementById("classDesc").className="animate__animated animate__fadeInDown"
                 break;
             case "bardo":
-                document.getElementById("classDesc").style.left='99.5%' 
+                document.getElementById("classDesc").style.left='111%' 
                 document.getElementById("classDesc").className="animate__animated animate__fadeInDown"
                 break;           
         }
     
     document.getElementById("classDesc").style.opacity=1  
-        document.getElementById("classDesc").innerText=`Fuerza: ${clase.fuerza}\nCarisma: ${clase.carisma}\nInteligencia: ${clase.inteligencia}\nDestreza: ${clase.destreza}
+    document.getElementById("classDesc").innerText=`Fuerza: ${clase.fuerza}\nCarisma: ${clase.carisma}\nInteligencia: ${clase.inteligencia}\nDestreza: ${clase.destreza}
     Constitucion: ${clase.constitucion}\nVida: ${clase.vida}`
     
    
 }
-const mostrarHabilidades=()=>{
+
+
+
+const mostrarHabilidades=()=>{    
     
-    if(comprobador==1){
-        document.getElementById('habilidades').remove()        
-        comprobador--
-    }
+    comprobador===1 && restarhab();
+
     const elemento =document.createElement('div')
     const cartelhab=document.createElement('div')  
     elemento.id='habilidades'  
@@ -151,11 +150,8 @@ if (encontre.clase==''){
        
         
         clase=new Mago(valorAleatorio(1,5),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
-        eleccion="mago"
-        if (botonMago.style.backgroundImage===''){
-            botonMago.style.backgroundImage= "url('/Gameproject/static/assets/wizard2.jpg')"
-           
-        }       
+        eleccion="mago"    
+        botonMago.style.backgroundImage==='' && posicionamientoImg(botonMago,botonMagoTrans,'wizard2','right center' )
         encontre.retrato=botonMago.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
@@ -170,10 +166,8 @@ if (encontre.clase==''){
         
         clase=new Guerrero(valorAleatorio(5,10),valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(1,8),valorAleatorio(5,10))
         eleccion="guerrero"
-        if (botonGuerrero.style.backgroundImage===''){
-            botonGuerrero.style.backgroundImage= "url('/Gameproject/static/assets/warrior3.jpg')"
-                     
-        }   
+        
+        botonGuerrero.style.backgroundImage==='' && posicionamientoImg(botonGuerrero,botonGuerreroTrans,'warrior3','top')
         encontre.retrato=botonGuerrero.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
@@ -187,10 +181,8 @@ if (encontre.clase==''){
        
         clase=new Bardo(valorAleatorio(1,5),valorAleatorio(1,8),valorAleatorio(5,10),valorAleatorio(1,8),valorAleatorio(5,10))
         eleccion="bardo"
-        if (botonBardo.style.backgroundImage===''){
-            botonBardo.style.backgroundImage= "url('/Gameproject/static/assets/bard3.jpg')"
-                    
-        }   
+       
+        botonBardo.style.backgroundImage==='' && posicionamientoImg(botonBardo,botonBardoTrans,'bard3','bottom')        
         encontre.retrato=botonBardo.style.backgroundImage
         encontre.eleccion=eleccion
         encontre.clase=clase
@@ -267,40 +259,3 @@ botonMago.addEventListener('mouseover',()=>{
    
     
 })
-botonMago.addEventListener('mouseleave',()=>{
-        botonMagoTrans.className="animate__animated animate__fadeOut"
-        Magopop.className="animate__animated animate__fadeOutLeft"
-})
-
-botonGuerrero.addEventListener('mouseover',()=>{
-    botonGuerreroTrans.id="GuerreroTrans"   
-    Guerreropop.id="cartelguerrero"
-    botonGuerreroTrans.className="animate__animated animate__fadeIn"   
-    Guerreropop.className="animate__animated animate__fadeInLeft"
-    Guerreropop.innerHTML="Guerrero"
-    
-    botonGuerrero.append(botonGuerreroTrans,Guerreropop)
-    botonGuerrero.style.cursor='pointer'
-   
-})
-botonGuerrero.addEventListener('mouseleave',()=>{
-        botonGuerreroTrans.className="animate__animated animate__fadeOut"
-        Guerreropop.className="animate__animated animate__fadeOutLeft"
-})
-
-botonBardo.addEventListener('mouseenter',()=>{
-    botonBardoTrans.id="BardoTrans"
-    Bardopop.id="cartelbardo"
-    botonBardoTrans.className="animate__animated animate__fadeIn"   
-    Bardopop.className="animate__animated animate__fadeInLeft"
-    Bardopop.innerHTML="Bardo"
-    botonBardo.append(botonBardoTrans,Bardopop)
-    botonBardo.style.cursor='pointer'
-   
-    
-})
-botonBardo.addEventListener('mouseleave',()=>{
-    botonBardoTrans.className="animate__animated animate__fadeOut"
-    Bardopop.className="animate__animated animate__fadeOutLeft"
-})
-

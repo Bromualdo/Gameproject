@@ -114,32 +114,6 @@ class Bardo{
 
 }
 
-
-// console.log(Clase.getHabilidades(0))
-
-// a=Clase.showhabilidades()
-// danioHabilidad=Clase.daniohabilidad(1)
-// habilidadUsada=Clase.habilidadUsada(1)
-// console.log("casteas "+habilidadUsada+" por "+danioHabilidad)
-// ob={
-//     Nombre:"Oda a los caidos",
-//     Danio:10}
-// habilidadAprendida=Clase.aprenderHabilidad(ob)
-// habilidadUsada=Clase.habilidadUsada(3)
-// console.log(habilidadUsada)
-
-
-
-// const MagoVar=new Mago("adrian",20,20,20)
-// const GuerreroVar= new Guerrero("pedro",20,20,20)
-
-// Clases.push(MagoVar)
-// Clases.push(GuerreroVar)
-
-// console.log(Clases[0].habilidadUsada(1))
-
-
-
 class Esqueleto{
     constructor(fuerza,destreza,constitucion){
     this.nombre="Esqueleto"
@@ -248,6 +222,18 @@ max = Math.floor(max)
 return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+function posicionamientoImg(espacio,transicion,imagen,posicion )
+{
+    espacio.style.backgroundImage=`url(/Gameproject/static/assets/${imagen}.jpg)`
+    espacio.style.backgroundPosition=`${posicion}`
+    transicion.style.backgroundImage=`url(/Gameproject/static/assets/${imagen}sm.jpg)`
+    transicion.style.backgroundPosition=`${posicion}`
+}       
+
+function restarhab() {
+    document.getElementById('habilidades').remove()
+    comprobador--
+}
 
 const GeneradorEnemigo = () =>{
     enemigos=[]
@@ -255,19 +241,7 @@ const GeneradorEnemigo = () =>{
     ArañaVar=new ArañaG(valorAleatorio(1,3),valorAleatorio(1,5),valorAleatorio(1,2))
     HloboVar=new Hlobo(valorAleatorio(5,10),valorAleatorio(3,8),valorAleatorio(5,25))
     enemigos.push(EsqueletoVar,ArañaVar,HloboVar)
-    // const resultado=enemigos.find(monster=>monster.nombre==='Esqueleto') //<<-- uso de la funcion find devuelve un solo numero
-    // const resultado=enemigos.filter(monster=>monster.destreza>1) //<<-- uso de la funcion filter devuelve todos los objetos que tengan destreza mayor que 1
-    // const resultado=enemigos.filter(monster=>monster.nombre.includes('e'))// <<-- uso del metodo includes para generar una busqueda mas detallada de la funcion filter
-    // const resultado=enemigos.some(monster=>monster.nombre==='Esqueleto') //<<-- uso de la funcion some para realizar una busqueda en el array , devuelve booleano
-    // const resultado=enemigos.map(monster=>monster.nombre) //<<-- uso de la funcion map sirve para modificar el array original ,y hace un nuevo array con las nuevas modificaciones
-    // const resultado=enemigos.map(monster=>{
-    //  return{ nombre: monster.nombre + " trolaso",
-    //         fuerza: monster.fuerza * 15,
-    //         destreza: monster.destreza *10,
-    //         constitucion:monster.constitucion *10
-    //     }
-    //     })   
-    // console.log(resultado)
+
     return enemigos[valorAleatorio(0,2)]
 }
 
@@ -275,72 +249,72 @@ const GeneradorEnemigo = () =>{
 
 
 
-const Hit = (numero1,numero2) =>{
-    let acerto =false
-    let variable=valorAleatorio(0,18)
-    resultado=variable+numero1-numero2 
-    if (resultado >7){        
-        return acerto=true 
-    }
-    else{
+// const Hit = (numero1,numero2) =>{
+//     let acerto =false
+//     let variable=valorAleatorio(0,18)
+//     resultado=variable+numero1-numero2 
+//     if (resultado >7){        
+//         return acerto=true 
+//     }
+//     else{
         
-        return acerto=false
-    }  
+//         return acerto=false
+//     }  
    
     
-}
+// }
 
-const Combate =(var1,var2) =>{
+// const Combate =(var1,var2) =>{
    
-    vidaPlayer=var1.vida
-    vidaEnem=var2.vida()
-    console.log(vidaPlayer,vidaEnem,enemigo.nombre)
-    i=1
+//     vidaPlayer=var1.vida
+//     vidaEnem=var2.vida()
+//     console.log(vidaPlayer,vidaEnem,enemigo.nombre)
+//     i=1
 
-    while (vidaPlayer>0 && vidaEnem > 0) {
-        alert("Round "+i)
-        variableUsada=valorAleatorio(0,2)
-        usoHabilidad=var1.habilidadUsada(variableUsada)
-        habilidadDmg=var1.danioHabilidad(variableUsada)
-        variableUsadaEnem=valorAleatorio(0,1)
-        usoHabilidadEnem=var2.habilidadUsada(variableUsadaEnem)
-        habilidadDmgEnem=var2.danioHabilidad(variableUsadaEnem)
+//     while (vidaPlayer>0 && vidaEnem > 0) {
+//         alert("Round "+i)
+//         variableUsada=valorAleatorio(0,2)
+//         usoHabilidad=var1.habilidadUsada(variableUsada)
+//         habilidadDmg=var1.danioHabilidad(variableUsada)
+//         variableUsadaEnem=valorAleatorio(0,1)
+//         usoHabilidadEnem=var2.habilidadUsada(variableUsadaEnem)
+//         habilidadDmgEnem=var2.danioHabilidad(variableUsadaEnem)
         
           
-            alert("Tu Turno")
-            if (Hit(clase.destreza,enemigo.destreza)==true){
-                if (variableUsada <3){
-                    alert('Aciertas!\nUtilizas '+usoHabilidad+'!!\nTu daño es de: '+habilidadDmg)
-                    vidaEnem-=habilidadDmg
-                    alert('su vida es de '+vidaEnem)    
-                }
-                }
-                else {
-                    alert("Tu enemigo esquiva tu ataque!!")
-                }
-        if (vidaEnem >0){
-            alert("Turno Enemigo")
-            if (Hit(enemigo.destreza,clase.destreza)==true){
-            if (variableUsadaEnem <2){
-                    alert(var2.nombre+ ' te Acierta!\nUso la habilidad '+usoHabilidadEnem+'!!\nSu daño es de: '+habilidadDmgEnem)
-                    vidaPlayer-=habilidadDmgEnem
-                    alert('tu vida es de '+vidaPlayer)
-            } 
-        }
-            else {
-                alert("Esquivas el ataque de tu enemigo!!")
-            }
+//             alert("Tu Turno")
+//             if (Hit(clase.destreza,enemigo.destreza)==true){
+//                 if (variableUsada <3){
+//                     alert('Aciertas!\nUtilizas '+usoHabilidad+'!!\nTu daño es de: '+habilidadDmg)
+//                     vidaEnem-=habilidadDmg
+//                     alert('su vida es de '+vidaEnem)    
+//                 }
+//                 }
+//                 else {
+//                     alert("Tu enemigo esquiva tu ataque!!")
+//                 }
+//         if (vidaEnem >0){
+//             alert("Turno Enemigo")
+//             if (Hit(enemigo.destreza,clase.destreza)==true){
+//             if (variableUsadaEnem <2){
+//                     alert(var2.nombre+ ' te Acierta!\nUso la habilidad '+usoHabilidadEnem+'!!\nSu daño es de: '+habilidadDmgEnem)
+//                     vidaPlayer-=habilidadDmgEnem
+//                     alert('tu vida es de '+vidaPlayer)
+//             } 
+//         }
+//             else {
+//                 alert("Esquivas el ataque de tu enemigo!!")
+//             }
         
-        }
-        i++  
-    }
-if (vidaEnem <=0){
-    alert("Derrotaste a tu enemigo!, la aventura continua")
-    var1.vida=vidaPlayer 
-}   else{
-    alert("Las fuerzas del mal te han superado ! intentalo otra vez!")
-        return
-    }
-}
+//         }
+//         i++  
+//     }
+// if (vidaEnem <=0){
+//     alert("Derrotaste a tu enemigo!, la aventura continua")
+//     var1.vida=vidaPlayer 
+// }   else{
+//     alert("Las fuerzas del mal te han superado ! intentalo otra vez!")
+//         return
+//     }
+// }
 
 
