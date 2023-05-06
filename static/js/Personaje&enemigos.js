@@ -245,8 +245,8 @@ function restarhab() {
 
 const GeneradorEnemigo = () =>{
     enemigos=[]
-    EsqueletoVar=new Esqueleto(valorAleatorio(1,4),valorAleatorio(1,2),valorAleatorio(1,3))
-    ArañaVar=new ArañaG(valorAleatorio(1,3),valorAleatorio(1,5),valorAleatorio(1,2))
+    EsqueletoVar=new Esqueleto(valorAleatorio(1,4),valorAleatorio(1,2),valorAleatorio(5,20))
+    ArañaVar=new ArañaG(valorAleatorio(2,5),valorAleatorio(3,4),valorAleatorio(6,15))
     HloboVar=new Hlobo(valorAleatorio(5,10),valorAleatorio(3,8),valorAleatorio(5,25))
     enemigos.push(EsqueletoVar,ArañaVar,HloboVar)
 

@@ -26,7 +26,7 @@ const allow = ()=>{
         if (found.usuario===gimme_usuario && found.password===gimme_password){
             sesion_usuario=localStorage.setItem('sesion',found.usuario)           
             
-            window.location ="/Gameproject/template/index.html"
+            window.location ="/Gameproject/template/seleccion.html"
             
             
         break

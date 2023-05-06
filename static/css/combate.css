@@ -9,7 +9,7 @@
 
 body{
  
-background-image: url(/Gameproject/images/combat.jpg);
+background-image: url(/Gameproject/static/assets/combat.jpg);
 background-size:cover;
 background-repeat: no-repeat;
 position: absolute;
